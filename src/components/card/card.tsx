@@ -8,7 +8,9 @@ import { escapeHtml } from "../../helpers";
 export const Card = (props: { card: { color: string; item: TCard } }) => {
   const { color, item } = props.card;
   const { question, answer } = item;
-  const paragraphs = answer.split(". ").map((p) => escapeHtml(p) + ".");
+  const paragraphs = answer
+    .split(". ")
+    .map((p) => escapeHtml(p).replace('.', '. ') + ".");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {

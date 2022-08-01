@@ -8,11 +8,12 @@
         border-radius: 0.25rem;
         max-width: 960px;
         width: 100%;
-        margin: 1rem auto;
+        margin: .2rem auto;
         padding: 1.5rem;
+        box-sizing: border-box;
         border: 1px solid;
         opacity: 1;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.2s ease;
 
         @each $color-name, $color-value in $btn-colors {
             &_color_#{$color-name} {
@@ -53,17 +54,6 @@
         @include hover-desktop() {
             cursor: pointer;
         }
-    }
-
-    &__content {
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        border: 1px solid;
-        border-radius: 0 0 0.25rem 0.25rem;
-        padding: 1.5rem;
-        opacity: 1;
-        transition: opacity 0.3s ease;
     }
 
     &__paragraph {

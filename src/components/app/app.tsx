@@ -6,9 +6,10 @@ import { getRandomItem } from "../../helpers";
 import { useState } from "react";
 
 const btns: TBtn[] = [
-  { color: "purple", theme: "html" },
+  { color: "magenta", theme: "html" },
   { color: "orange", theme: "css" },
   { color: "green", theme: "js" },
+  { color: "blue", theme: "react" },
 ];
 
 export const App = () => {

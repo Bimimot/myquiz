@@ -4,7 +4,7 @@ export const cards: TCards = {
     html: [
         {
             "question": "What is a DOM?",
-            "answer": "DOM - Document Object Model. It's an interface for HTML documents. Browser makes DOM when it's parsing the html-document. DOM uses for interactions by JS-scripts. DOM shows in the DevTools in a browser"
+            "answer": "DOM - Document Object Model.Browser makes DOM when it's parsing the html-document. It's an interface for HTML documents.DOM uses for interactions by JS-scripts. DOM shows in the DevTools in a browser"
         },
         {
             "question": "What is the difference between <span> and <div>",
