@@ -8,9 +8,9 @@ import { escapeHtml } from "../../helpers";
 export const Card = (props: { card: { color: string; item: TCard } }) => {
   const { color, item } = props.card;
   const { question, answer } = item;
-  const paragraphs = answer
-    .split(". ")
-    .map((p) => escapeHtml(p).replace('.', '. ') + ".");
+  //   const paragraphs = answer
+  //     .split(". ")
+  //     .map((p) => escapeHtml(p).replace('.', '. ') + ".");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export const Card = (props: { card: { color: string; item: TCard } }) => {
   }, [props.card]);
 
   const blockStyle = `card__block card__block_color_${color}`;
-
+    
   return (
     <div className="card">
       <div className={blockStyle}>
@@ -35,11 +35,9 @@ export const Card = (props: { card: { color: string; item: TCard } }) => {
       </div>
 
       <div className={`${blockStyle} card__block_show_${isOpen}`}>
-        {paragraphs.map((paragraph, i) => (
-          <ReactMarkdown className="card__paragraph" key={i}>
-            {paragraph}
-          </ReactMarkdown>
-        ))}
+        <ReactMarkdown className="card__paragraph">
+          {answer}
+        </ReactMarkdown>
       </div>
     </div>
   );
