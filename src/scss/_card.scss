@@ -1,0 +1,82 @@
+.card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: transparent;
+
+    &__block {
+        border-radius: 0.25rem;
+        max-width: 960px;
+        width: 100%;
+        margin: 1rem auto;
+        padding: 1.5rem;
+        border: 1px solid;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+
+        @each $color-name, $color-value in $btn-colors {
+            &_color_#{$color-name} {
+                color: $color-value;
+                background-color: transparent;
+                border-color: $color-value;
+            }
+        }
+
+        &_show_false {
+            opacity: 0;
+        }
+
+        &_show_true {
+            opacity: 1;
+        }
+    }
+
+    &__intro {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        color: currentColor;
+    }
+
+    &__title {
+        font-size: 1.2rem;
+        line-height: 34px;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        align-self: center;
+        text-align: left;
+        margin-right: 1rem;
+        letter-spacing: .1rem;
+
+        @include hover-desktop() {
+            cursor: pointer;
+        }
+    }
+
+    &__content {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        border: 1px solid;
+        border-radius: 0 0 0.25rem 0.25rem;
+        padding: 1.5rem;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    &__paragraph {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        margin: 0;
+        padding: 0;
+        color: $color-white;
+        text-align: left;
+        letter-spacing: .05rem;
+
+        & p {
+            margin: 0;
+        }
+    }
+}

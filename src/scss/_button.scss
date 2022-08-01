@@ -1,0 +1,38 @@
+.button {
+    display: flex;
+    position: relative;
+    width: 8rem;
+    height: 3rem;
+    border: 2px solid currentColor;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+
+
+    background-color: transparent;
+    color: currentColor;
+    border: none;
+    outline: none;
+
+    @each $color-name, $color-value in $btn-colors {
+        &_color_#{$color-name} {
+            color: $color-value;
+            background-color: transparent;
+            border-color: $color-value;
+            border: 2px solid;
+
+            @include hover-desktop() {
+                color: $color-black;
+                background-color: $color-value;
+                border-color: $color-value;
+            }
+        }
+    }
+
+    &__text{
+    font-weight: 700;
+    letter-spacing: .1rem;
+    }
+}

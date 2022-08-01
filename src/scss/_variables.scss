@@ -1,0 +1,18 @@
+$btn-colors: (
+    "purple": #FF00FF,
+    "green": #006400,
+    "orange": #FF8C00
+);
+
+$color-black: #111111;
+$color-green: #118c4e;
+$color-white: #f4f4f4;
+
+@mixin hover-desktop() {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            @content;
+        }
+    }
+}
+

@@ -1,0 +1,40 @@
+html {
+    background-color: $color-black;
+    color: $color-white;
+}
+
+body{
+    font-size: 16px;
+    scroll-behavior: smooth;
+    font-family: 'Roboto';
+
+    @media screen and(max-width: 767px) {
+        font-size: 12px;
+    }
+
+    @media screen and(max-width: 480px) {
+        font-size: 10px;
+    }
+}
+
+.app{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    max-width: 1400px;
+    margin: 1rem auto;
+
+    &__title{
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;   
+    }
+}
+
+.row-items {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
+}
