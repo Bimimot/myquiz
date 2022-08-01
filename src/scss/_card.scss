@@ -12,8 +12,8 @@
         padding: 1.5rem;
         box-sizing: border-box;
         border: 1px solid;
-        opacity: 1;
-        transition: opacity 0.2s ease;
+        animation: show .2s .1s ease-in forwards;
+        opacity: 0;
 
         @each $color-name, $color-value in $btn-colors {
             &_color_#{$color-name} {
@@ -21,14 +21,6 @@
                 background-color: transparent;
                 border-color: $color-value;
             }
-        }
-
-        &_show_false {
-            opacity: 0;
-        }
-
-        &_show_true {
-            opacity: 1;
         }
     }
 
@@ -68,5 +60,14 @@
         & p {
             margin: 0;
         }
+    }
+}
+
+@keyframes show {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

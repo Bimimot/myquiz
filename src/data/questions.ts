@@ -19,12 +19,11 @@ export const cards: TCards = {
             "question": "What are meta tags?",
             "answer":
                 `Meta tags are within <head> tag, they describe the page.  
-${"```"}   
+...  
 <meta name="description" content="Description search engines use">  
 <meta name="keywords" content="Keywords, of, your, page">  
 <meta name="author" content = "Me">
-${"```"}`
-        }            
+`}            
     ],
     css: [
         {

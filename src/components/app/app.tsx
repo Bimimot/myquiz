@@ -1,9 +1,10 @@
+import { useCallback, useState, useEffect } from "react";
 import { Button } from "../button/button";
 import { Card } from "../card/card";
-import { TCard, TThemes, TBtn } from "../../types";
+import { TBtn, TCardProps } from "../../types";
 import { cards } from "../../data/questions";
 import { getRandomItem } from "../../helpers";
-import { useState } from "react";
+
 
 const btns: TBtn[] = [
   { color: "magenta", theme: "html" },
@@ -13,17 +14,23 @@ const btns: TBtn[] = [
 ];
 
 export const App = () => {
-  const [card, setCard] = useState<{
-    color: string;
-    item: TCard;
-  } | null>(null);
+    const [card, setCard] = useState<TCardProps | null>(null);
+    const [newCard, setNewCard] = useState<TCardProps | null>(null);
 
-  const clickBtn = (btn: TBtn) => {
-    const newCard = getRandomItem(cards[btn.theme]);
+  const clickBtn = useCallback((btn: TBtn) => {
+      setCard(null);
+      const newCard = getRandomItem(cards[btn.theme]);      
     if (newCard) {
-      setCard({ color: btn.color, item: newCard });
+      setNewCard({ color: btn.color, item: newCard });
     }
-  };
+  }, []);
+    
+  //useEffect for animation  - hide card & render again
+    useEffect(() => {
+    if (newCard) {
+      setCard(newCard);
+    }
+    },[newCard])
 
   return (
     <div className="app">

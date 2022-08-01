@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import ReactMarkdown from "react-markdown";
-import { TCard } from "../../types";
+import { TCardProps } from "../../types";
 import { IconPlus, IconMinus } from "../icons";
 import { Button } from "../button/button";
 import { escapeHtml } from "../../helpers";
 
-export const Card = (props: { card: { color: string; item: TCard } }) => {
+export const Card = memo(
+    (props: { card: TCardProps }) => {
   const { color, item } = props.card;
   const { question, answer } = item;
-  //   const paragraphs = answer
-  //     .split(". ")
-  //     .map((p) => escapeHtml(p).replace('.', '. ') + ".");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -19,7 +17,7 @@ export const Card = (props: { card: { color: string; item: TCard } }) => {
     }
   }, [props.card]);
 
-  const blockStyle = `card__block card__block_color_${color}`;
+        const blockStyle = `card__block card__block_color_${color}`;
     
   return (
     <div className="card">
@@ -34,50 +32,14 @@ export const Card = (props: { card: { color: string; item: TCard } }) => {
         </div>
       </div>
 
-      <div className={`${blockStyle} card__block_show_${isOpen}`}>
-        <ReactMarkdown className="card__paragraph">
-          {answer}
-        </ReactMarkdown>
-      </div>
+      {isOpen && (
+        <div className={blockStyle}>
+          <ReactMarkdown className="card__paragraph">
+            {escapeHtml(answer)}
+          </ReactMarkdown>
+        </div>
+      )}
     </div>
   );
-};
-
-// import remarkGfm from "remark-gfm";
-
-// export const FaqCard = (props: { card: TFaqCard }) => {
-//   const {
-//     card: { title, paragraphs },
-//   } = props;
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   return (
-//     <div className="faq-card">
-//       <div
-//         className={`faq-card__intro ${
-//           isOpen ? "faq-card__intro_mode_open" : ""
-//         }`}
-//       >
-//         <h3 className="faq-card__title" onClick={() => setIsOpen(!isOpen)}>
-//           {title}
-//         </h3>
-//         <Button newClick={() => setIsOpen(!isOpen)}>
-//           {isOpen ? <IconMinus /> : <IconPlus />}
-//         </Button>
-//       </div>
-//       {isOpen && (
-//         <div className="faq-card__content">
-//           {paragraphs.map((paragraph, i) => (
-//             <ReactMarkdown
-//               className="faq-card__paragraph"
-//               key={i}
-//               // remarkPlugins={[remarkGfm]}
-//             >
-//               {paragraph}
-//             </ReactMarkdown>
-//           ))}
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
+}
+);
