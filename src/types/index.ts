@@ -2,7 +2,8 @@ export type TBtn = { color: string; theme: TThemes };
 
 export type TCard = {
     question: string,
-    answer: string
+    answer: string,
+    tags?: string[]
 }
 
 export type TCards = {

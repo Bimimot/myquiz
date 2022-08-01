@@ -8,7 +8,7 @@ import { escapeHtml } from "../../helpers";
 export const Card = memo(
     (props: { card: TCardProps }) => {
   const { color, item } = props.card;
-  const { question, answer } = item;
+  const { question, answer, tags = [] } = item;
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -36,7 +36,10 @@ export const Card = memo(
         <div className={blockStyle}>
           <ReactMarkdown className="card__paragraph">
             {escapeHtml(answer)}
-          </ReactMarkdown>
+                  </ReactMarkdown>
+                  <div className="card__tags">
+                      {tags.map((tag, i) => <span key={i}>#{tag}</span>)}
+                  </div>
         </div>
       )}
     </div>
