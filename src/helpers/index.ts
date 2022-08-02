@@ -1,7 +1,7 @@
-import { getRandomItem } from "./getRandomItem";
+import { getFreshItem } from "./getFreshItem";
 import { escapeHtml } from "./escapeHtml";
 
 export {
-    getRandomItem,
+    getFreshItem,
     escapeHtml
 }

@@ -13,8 +13,8 @@ export const cards: TCards = {
             tags: ["html", "dom"]
         },
         {
-            question: `What is the difference between <span> and <div>`,
-            answer: `<Div> needs for some block of document, <span> is a container for small elements.  
+            question: `What is the difference between SPAN and DIV`,
+            answer: `DIV needs for some block of document, SPAN is a container for small elements.  
             We can't use SPAN inside DIV. (DIV is an inline element, SPAN - is a block element)`,
             tags: ["html", "div", "span"]
         },
@@ -22,10 +22,11 @@ export const cards: TCards = {
             question: "What are meta tags?",
             answer:
                 `Meta tags are within <head> tag, they describe the page.    
-...                  
-<meta name="description" content="Description search engines use">  
-<meta name="keywords" content="Keywords, of, your, page">  
+${"```"}
+<meta name="description" content="Description search engines use">
+<meta name="keywords" content="Keywords, of, your, page">
 <meta name="author" content = "Me">
+${"```"}
 `,
             tags: ["html", "tags", "meta"],
         },
@@ -60,7 +61,7 @@ And static position - it's default position. Elements show in the same order as 
 ...  
 @media (max-width: 1200px) { /* … */ }
   `,
-            tags:["css", "media queries"]
+            tags: ["css", "media queries"]
         },
         // {
         //     question: "",
@@ -111,11 +112,34 @@ And static position - it's default position. Elements show in the same order as 
         //     answer: ``
         // }
     ],
-    react: [
+    ts: [
         {
-            question: "",
-            answer: ``
+            question: "What is TypeScript and why would I use it in place of JavaScript?",
+            answer: `TypeScript is a superset of JavaScript which primarily provides optional static typing, classes and interfaces.  
+            One of the big benefits is to enable IDEs to provide a richer environment for spotting common errors as you type the code.
+            For a large JavaScript project, adopting TypeScript might result in more robust software, while still being deployable where a regular JavaScript application would run.`,
+            tags: ["ts"]
         },
+        {
+            question: "Explain generics in TypeScript",
+            answer: `Generics are able to create a component or function to work over a variety of types rather than a single one.
+${"```"}
+class Queue<T> {  
+  private data = [];  
+  push = (item: T) => this.data.push(item);  
+  pop = (): T => this.data.shift();  
+}
+  
+const queue = new Queue<number>();  
+queue.push(0);  
+queue.push("1"); // ERROR : cannot push a string. Only numbers allowed  
+${"```"}
+`,
+            tags: ["ts", "generic"]
+        },
+    ],
+    react: [
+
         {
             question: "",
             answer: ``

@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { TCardProps } from "../../types";
 import { IconPlus, IconMinus } from "../icons";
 import { Button } from "../button/button";
-import { escapeHtml } from "../../helpers";
+// import { escapeHtml } from "../../helpers";
 
 export const Card = memo(
   (props: { card: TCardProps }) => {
@@ -35,7 +35,7 @@ export const Card = memo(
         {isOpen && (
           <div className={blockStyle}>
             <ReactMarkdown className="card__paragraph">
-              {escapeHtml(answer)}
+              {answer}
             </ReactMarkdown>
             <div className="card__tags">
               {tags.map((tag, i) => <span key={i}>#{tag}</span>)}

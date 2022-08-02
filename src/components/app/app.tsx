@@ -1,40 +1,37 @@
 import { useCallback, useState, useEffect } from "react";
-import isEqual from "lodash.isequal";
 import { Button } from "../button/button";
 import { Card } from "../card/card";
 import { TBtn, TCardProps } from "../../types";
 import { cards } from "../../data/questions";
-import { getRandomItem } from "../../helpers";
-
+import { getFreshItem } from "../../helpers";
 
 const btns: TBtn[] = [
   { color: "magenta", theme: "html" },
   { color: "orange", theme: "css" },
   { color: "green", theme: "js" },
-  { color: "blue", theme: "react" },
+  { color: "violet", theme: "ts" },
+  { color: "lightblue", theme: "react" },
 ];
 
 export const App = () => {
-    const [card, setCard] = useState<TCardProps | null>(null);
-    const [newCard, setNewCard] = useState<TCardProps | null>(null);
+  const [card, setCard] = useState<TCardProps | null>(null);
+  const [newCard, setNewCard] = useState<TCardProps | null>(null);
 
-  const clickBtn = useCallback((btn: TBtn) => {
-    const newCard = getRandomItem(cards[btn.theme]);
-    //check previous card, for show new card, not the same card
-    if (newCard && !isEqual(newCard, card?.item)) {
+  const clickBtn = useCallback(
+    (btn: TBtn) => {
+      const newCard = getFreshItem(cards[btn.theme]);
       setCard(null);
       setNewCard({ color: btn.color, item: newCard });
-    } else {
-      clickBtn(btn)
-    }
-  }, [card]);
-    
+    },
+    []
+  );
+
   //useEffect for animation  - hide card & render again
-    useEffect(() => {
+  useEffect(() => {
     if (newCard) {
       setCard(newCard);
     }
-    },[newCard])
+  }, [newCard]);
 
   return (
     <div className="app">
