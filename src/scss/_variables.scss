@@ -9,6 +9,8 @@ $color-black: #111111;
 $color-green: #118c4e;
 $color-white: #f4f4f4;
 
+$width: 960px;
+
 @mixin hover-desktop() {
     @media (hover: hover) and (pointer: fine) {
         &:hover {

@@ -21,7 +21,7 @@ body{
     display: flex;
     position: relative;
     flex-direction: column;
-    max-width: 1400px;
+    max-width: $width;
     margin: auto;
     padding: 1rem;
     box-sizing: border-box;
@@ -37,6 +37,6 @@ body{
     display: flex;
     position: relative;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 1rem;
 }

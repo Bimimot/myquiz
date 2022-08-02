@@ -21,9 +21,8 @@ export const cards: TCards = {
         {
             question: "What are meta tags?",
             answer:
-                `Meta tags are within <head> tag, they describe the page.  
-  
-                
+                `Meta tags are within <head> tag, they describe the page.    
+...                  
 <meta name="description" content="Description search engines use">  
 <meta name="keywords" content="Keywords, of, your, page">  
 <meta name="author" content = "Me">
@@ -53,17 +52,24 @@ And static position - it's default position. Elements show in the same order as 
             tags: ["css", "position"]
         },
         {
-            question: "",
-            answer: ``
+            question: "How to use media queries?",
+            answer: `Media queries are used for the following:  
+— To conditionally apply styles with the CSS @media and @import,
+— To target specific media for the <style>, <link>, <source>, and other HTML elements with the media= attribute,  
+— To test and monitor media states using the Window.matchMedia() and MediaQueryList.addListener() JavaScript methods.  
+...  
+@media (max-width: 1200px) { /* … */ }
+  `,
+            tags:["css", "media queries"]
         },
-        {
-            question: "",
-            answer: ``
-        },
-        {
-            question: "",
-            answer: ``
-        }
+        // {
+        //     question: "",
+        //     answer: ``
+        // },
+        // {
+        //     question: "",
+        //     answer: ``
+        // }
     ],
     js: [
         {
