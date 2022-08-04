@@ -25,4 +25,28 @@ ${"```"}
 `,
         tags: ["ts", "generic"]
     },
+    {
+        question: "Does TypeScript support all object oriented principles?",
+        answer: `Yes. There are 4 main principles to Object Oriented Programming:  
+- Encapsulation,  
+- Inheritance,  
+- Abstraction,  
+- Polymorphism.
+`,
+        tags: ["ts", "OOP"]
+    },
+    {
+        question: "How could you check null and undefined in TypeScript?",
+        answer: `Just like in JS:  
+        ***if (value) {...}***  
+        It will evaluate to true if value is not:  
+- null,  
+- undefined
+- NaN  
+- empty string  
+- 0  
+- false
+`,
+        tags: ["ts", "types", "null", "undefined"]
+    },
 ];
