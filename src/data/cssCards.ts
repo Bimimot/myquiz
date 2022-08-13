@@ -136,5 +136,11 @@ They will also take space for an entire row or width. List of block elements are
 **Inline Elements**: Inline elements don't start on a new line, they appear on the same line as the content and tags beside them. Some examples of inline elements are <a>, <span> , <strong>, and <img> tags.
 **Inline Block Elements**: Inline-block elements are similar to inline elements, except they can have padding and margins and set height and width values`,
         tags: ["css", "vh", "vw"]
+    },
+    {
+        question: "Difference between reset vs normalize CSS?. How do they differ?",
+        answer: `**Reset CSS**: CSS resets aim to remove all built-in browser styling. For example margins, paddings, font-sizes of all elements are reset to be the same.          
+**Normalize CSS**: Normalize CSS aims to make built-in browser styling consistent across browsers. It also corrects bugs for common browser dependencies`,
+        tags: ["css", "normalize css", "reset css"]
     }
 ];
