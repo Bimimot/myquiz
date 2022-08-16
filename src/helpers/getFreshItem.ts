@@ -5,7 +5,7 @@ export const getFreshItem = ((): Function => {
     let previousItem = {};
 
     const getFreshItem = (arr: TCard[]): TCard => {
-        const freshItem = arr[Math.round(Math.random() * (arr.length - 1))];
+        const freshItem = arr[Math.round(Math.random() * (arr.length))];
         if (isEqual(freshItem, previousItem)) {
             return getFreshItem(arr)
         } else {

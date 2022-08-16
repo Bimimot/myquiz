@@ -135,12 +135,23 @@ If the height of the browser is 1000px, 1vh is equal to 10px. Similarly, if the 
 They will also take space for an entire row or width. List of block elements are <div>, <p>.
 **Inline Elements**: Inline elements don't start on a new line, they appear on the same line as the content and tags beside them. Some examples of inline elements are <a>, <span> , <strong>, and <img> tags.
 **Inline Block Elements**: Inline-block elements are similar to inline elements, except they can have padding and margins and set height and width values`,
-        tags: ["css", "vh", "vw"]
+        tags: ["css", "display", "inline"]
     },
     {
         question: "Difference between reset vs normalize CSS?. How do they differ?",
         answer: `**Reset CSS**: CSS resets aim to remove all built-in browser styling. For example margins, paddings, font-sizes of all elements are reset to be the same.          
 **Normalize CSS**: Normalize CSS aims to make built-in browser styling consistent across browsers. It also corrects bugs for common browser dependencies`,
         tags: ["css", "normalize css", "reset css"]
+    },
+    {
+        question: "Explain CSS position property?",
+        answer: `
+- **Absolute**: To place an element exactly where you want to place it. absolute position is actually set relative to the element's parent. if no parent is available then the relative place to the page itself (it will default all the way back up to the element).  
+- **Relative**: "Relative to itself". Setting position: relative; on an element and no other positioning attributes, it will no effect on its positioning. It allows the use of z-index on the element and it limits the scope of absolutely positioned child elements. Any child element will be absolutely positioned within that block. 
+- **Fixed**: The element is positioned relative to the viewport or the browser window itself. viewport doesn't change if you scroll and hence the fixed element will stay right in the same position.  
+- **Static**: Static default for every single page element. The only reason you would ever set an element to position: static is to forcefully remove some positioning that got applied to an element outside of your control.  
+- **Sticky**: Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until it crosses a specified threshold, at which point it is treated as fixed positioned.
+`,
+        tags: ["css", "position"]
     }
 ];
