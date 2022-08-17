@@ -14,11 +14,11 @@
         animation: show .2s .1s ease-in forwards;
         opacity: 0;
 
-        @each $color-name, $color-value in $btn-colors {
-            &_color_#{$color-name} {
-                color: $color-value;
+        @each $color in $btnColors {
+            &_color_#{$color} {
+                color: $color;
                 background-color: transparent;
-                border-color: $color-value;
+                border-color: $color;
             }
         }
     }

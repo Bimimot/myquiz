@@ -3,28 +3,18 @@ import { Button } from "../button/button";
 import { Card } from "../card/card";
 import { TBtn, TCardProps } from "../../types";
 import { cards } from "../../data/questions";
-import { getFreshItem } from "../../helpers";
-
-const btns: TBtn[] = [
-  { color: "magenta", theme: "html" },
-  { color: "orange", theme: "css" },
-  { color: "green", theme: "js" },
-  { color: "violet", theme: "ts" },
-  { color: "lightblue", theme: "react" },
-];
+import { getFreshItem, collectBtns } from "../../helpers";
 
 export const App = () => {
+  const [btns, setBtns] = useState<TBtn[]>([]);
   const [card, setCard] = useState<TCardProps | null>(null);
   const [newCard, setNewCard] = useState<TCardProps | null>(null);
 
-  const clickBtn = useCallback(
-    (btn: TBtn) => {
-      const newCard = getFreshItem(cards[btn.theme]);
-      setCard(null);
-      setNewCard({ color: btn.color, item: newCard });
-    },
-    []
-  );
+  const clickBtn = useCallback((btn: TBtn) => {
+    const newCard = getFreshItem(cards[btn.theme]);
+    setCard(null);
+    setNewCard({ color: btn.color, item: newCard });
+  }, []);
 
   //useEffect for animation  - hide card & render again
   useEffect(() => {
@@ -32,6 +22,10 @@ export const App = () => {
       setCard(newCard);
     }
   }, [newCard]);
+
+  useEffect(() => {
+    setBtns(collectBtns(cards));
+  }, []);
 
   return (
     <div className="app">
@@ -42,6 +36,7 @@ export const App = () => {
         {btns.map((b, i) => (
           <Button
             text={b.theme}
+            subText={b.count.toString()}
             color={b.color}
             key={i}
             newClick={() => clickBtn(b)}

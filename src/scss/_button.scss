@@ -1,38 +1,43 @@
 .button {
     display: flex;
     position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 8rem;
     height: 3rem;
     border: 2px solid currentColor;
     transition: all 0.3s ease;
     cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.25rem;
 
+    border-radius: 0.25rem;
+    letter-spacing: 0.1rem;
 
     background-color: transparent;
     color: currentColor;
     border: none;
     outline: none;
 
-    @each $color-name, $color-value in $btn-colors {
-        &_color_#{$color-name} {
-            color: $color-value;
+    @each $color in $btnColors {
+        &_color_#{$color} {
+            color: #{$color};
             background-color: transparent;
-            border-color: $color-value;
+            border-color: #{$color};
             border: 2px solid;
 
             @include hover-desktop() {
                 color: $color-black;
-                background-color: $color-value;
-                border-color: $color-value;
+                background-color: #{$color};
+                border-color: #{$color};
             }
         }
     }
 
-    &__text{
-    font-weight: 700;
-    letter-spacing: .1rem;
+    &__text {
+        font-weight: 700;
+    }
+
+    &__subtext {
+        font-size: 0.9rem;
     }
 }

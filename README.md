@@ -44,3 +44,26 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## How to add new theme
+1. Add a file with questions to folder src/data and called it newThemeCards.ts
+2. Import these cards to file src/data/questions.ts, add to *cards* your new data (newThemeCards):
+```
+import {newThemeCards} from "./newThemeCards.ts";
+
+export const cards: TCards = {
+    html: htmlCards,
+    css: cssCards,
+    ...
+    newTheme: newThemeCards,
+}
+```
+3. Update *TThemes* type in src/types/index:
+```
+export type TThemes = "html" | "css" | "js" | "ts" | "react" | **"newTheme"**;
+```
+
+It's all.
+Now app can create 12 buttons and has 12 standart CSS color values here: src/scss/btnColors
+I think it's enough. :) Also, 12 is a good number!
+

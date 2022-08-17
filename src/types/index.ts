@@ -1,4 +1,4 @@
-export type TBtn = { color: string; theme: TThemes };
+export type TBtn = { color: string; theme: TThemes, count: number };
 
 export type TCard = {
     question: string,
