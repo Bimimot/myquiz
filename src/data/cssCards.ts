@@ -41,27 +41,27 @@ export const cssCards: TCard[] = [
             question: 'What is the Box model in CSS? Which CSS properties are a part of it?',
             answer: `A rectangle box is wrapped around every HTML element.  
             The box model is used to determine the height and width of the rectangular box.
-            The CSS Box consists of Width and height, padding, borders, margin.
-    - **Content:**  Actual Content of the box where the text or image is placed.
-    - **Padding**: Area surrounding the content (Space between the border and content).
-    - **Border**: Area surrounding the padding.
-    - **Margin**: Area surrounding the border`,
+            The CSS Box consists of Width and height, padding, borders, margin.  
+- **Content:**  Actual Content of the box where the text or image is placed.  
+- **Padding**: Area surrounding the content (Space between the border and content).  
+- **Border**: Area surrounding the padding.  
+- **Margin**: Area surrounding the border`,
             tags: ["css", "box model"]
         },
         {
             question: 'What are the advantages of using CSS?',
-            answer: `The main advantages of CSS are given below:
-    - **Separation of content from presentation** - CSS provides a way to present the same content in multiple presentation formats in mobile or desktop or laptop.
-    - **Easy to maintain** - CSS, built effectively can be used to change the look and feel complete by making small changes. To make a global change, simply change the style, and all elements in all the web pages will be updated automatically.
-    - **Bandwidth** - Used effectively, the style sheets will be stored in the browser cache and they can be used on multiple pages, without having to download again.`,
+            answer: `The main advantages of CSS are given below:  
+- **Separation of content from presentation** - CSS provides a way to present the same content in multiple presentation formats in mobile or desktop or laptop.  
+- **Easy to maintain** - CSS, built effectively can be used to change the look and feel complete by making small changes. To make a global change, simply change the style, and all elements in all the web pages will be updated automatically.  
+- **Bandwidth** - Used effectively, the style sheets will be stored in the browser cache and they can be used on multiple pages, without having to download again.`,
             tags: ["css", "css advantages"]
         },
         {
             question: 'What are the limitations of CSS?',
-            answer: `Disadvantages of CSS are given below:
-    - **Browser Compatibility**: Some style selectors are supported and some are not. We can to determine which style is supported or not using the @support selector or use site caniuse.com.
-    - **Cross Browser issue**: Some selectors behave differently in a different browser.
-    - **There is no parent selector**: Currently, Using CSS, you can't select a parent tag`,
+            answer: `Disadvantages of CSS are given below:  
+- **Browser Compatibility**: Some style selectors are supported and some are not. We can to determine which style is supported or not using the @support selector or use site caniuse.com.  
+- **Cross Browser issue**: Some selectors behave differently in a different browser.  
+- **There is no parent selector**: Currently, Using CSS, you can't select a parent tag`,
             tags: ["css", "css disadvantages"]
         },
     {
@@ -146,12 +146,52 @@ They will also take space for an entire row or width. List of block elements are
     {
         question: "Explain CSS position property?",
         answer: `
-- **Absolute**: To place an element exactly where you want to place it. absolute position is actually set relative to the element's parent. if no parent is available then the relative place to the page itself (it will default all the way back up to the element).  
+- **Absolute**: Absolute position is actually set relative to the element's parent. if no parent is available then the relative place to the page itself (it will default all the way back up to the element).  
 - **Relative**: "Relative to itself". Setting position: relative; on an element and no other positioning attributes, it will no effect on its positioning. It allows the use of z-index on the element and it limits the scope of absolutely positioned child elements. Any child element will be absolutely positioned within that block. 
 - **Fixed**: The element is positioned relative to the viewport or the browser window itself. viewport doesn't change if you scroll and hence the fixed element will stay right in the same position.  
 - **Static**: Static default for every single page element. The only reason you would ever set an element to position: static is to forcefully remove some positioning that got applied to an element outside of your control.  
 - **Sticky**: Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until it crosses a specified threshold, at which point it is treated as fixed positioned.
 `,
         tags: ["css", "position"]
+    },
+    {
+        question: "What is cascading in CSS?",
+        answer: `Cascading” refers to the process of going through the style declarations and defining weight or importance to the styling rules.  
+         It helps the browser to select what rules have to be applied in times of conflict. The conflict here refers to multiple rules that are applicable to a particular HTML element.  
+         In such cases, we need to let the browser know what style needs to be applied to the element. This is done by cascading down the list of style declarations elements.`,
+        tags: ["css", "cascading"]
+    },
+    {
+        question: "How is opacity specified in CSS3?",
+        answer: `Opacity refers to the degree to which the content is transparent or opaque.  
+        We can use the property named opacity which takes the values ranging from 0 to 1.  
+        0 specifies that the element is completely transparent where 1 means that the element is completely opaque.  
+        We can use the opacity property as follows:  
+        ${"```"}
+        div { 
+            opacity: 0.6;
+        }
+        ${"```"}  
+        The opacity property is not supported by the internet explorer browser.  
+        To make it work there, we need to use filter property as polyfill as shown in the example below.
+                ${"```"}
+        div { 
+            opacity: 0.6;
+            filter: alpha(opacity=60);
+        }
+        ${"```"}  
+        `,
+        tags: ["css", "opacity"]
+    },
+    {
+        question: "Why should we use float property in CSS?",
+        answer: `The float property is used for positioning the HTML elements horizontally either towards the left or right of the container. For instance:  
+         ${"```"}
+         .float-demo {
+                float: right;
+            }
+        ${"```"}  
+        Here, the element to which the class is applied ensures that the element is positioned on the right of the container.`,
+        tags: ["css", "float"]
     }
 ];
