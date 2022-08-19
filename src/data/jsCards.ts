@@ -91,10 +91,52 @@ Typeof alert(a) === “function”`,
     },
     {
         question: "What is hoisting?",
-        answer: `Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.  
-        Regardless of whether their scope is global or local.
-        Hoisting mechanism only moves the declaration, but the assignments are left in place`,
+        answer: `Hoisting means that a variable or function is moved to the top of their scope of where we defined the variable or function.  
+JavaScripts moves function declarations to the top of their scope of we can reference them later and gets all variable declarations and give them the value of undefined.  
+During execution, the variables that were hoisted are assigned a value or runs functions.  
+Only function declarations and variables declared with the *var* keyword are hoisted.  
+Variables declared with let and const constants aren't hoisted. Also, arrow functions and function expressions aren't hoisted.
+${"```"}
+foo();
+function foo(){
+ console.log('foo')
+}
+${"```"}  
+*foo* is hoisted, so it can be called before it's defined since it's a function declaration
+`,
         tags: ["js", "hoisting"]
+    },
+    {
+        question: "What is Scope?",
+        answer: `JavaScript's scope is the area where we have valid access to a variable or function.
+There're 3 kinds of scopes in JavaScript:
+- **global**: variables and functions that have global scope are accessible everywhere in the script,
+- **function**: variables are only available inside a function,
+- **block scope**: variables defined with *const* or *let* are only available inside a block (anything delimited by curly braces: *loop*. *if*).
+`,
+        tags: ["js", "scope"]
+    },
+    {
+        question: "What are Closures?",
+        answer: `Closures are functions that remember the variables and parameters on its current scope and all the way up to the global scope.  
+        Closures are a way to return inner functions with some of the entities of the outer function included.  
+        It's useful for keeping some things private while exposing some functionality.  
+${"```"}
+const foo = (() => {
+  let x = 'Joe';
+  const privateFn = () => {
+    alert( "Helo, " + x );
+  };
+  return {
+    publicFn() {
+      privateFn();
+    }
+  }
+})();
+foo.publicFn();
+${"```"}
+        `,
+        tags: ["js", "scope", "closures"]
     }
 
 ];
