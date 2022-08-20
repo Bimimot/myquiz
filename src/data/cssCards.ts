@@ -1,69 +1,69 @@
 import { TCard } from "../types";
 
 export const cssCards: TCard[] = [
-        {
-            question: "What the difference between fixed, absolute and relative position?",
-            answer: `With relative position element is shifted from its default position.  
+    {
+        question: "What the difference between fixed, absolute and relative position?",
+        answer: `With relative position element is shifted from its default position.  
     With fixed - it's shifted from browser window.  
     With absolute - it's shifted from parent element witch has position.  
     And static position - it's default position. Elements show in the same order as in a document.`,
-            tags: ["css", "position"]
-        },
-        {
-            question: "How to use media queries?",
-            answer: `Media queries are used for the following:  
+        tags: ["css", "position"]
+    },
+    {
+        question: "How to use media queries?",
+        answer: `Media queries are used for the following:  
     — To conditionally apply styles with the CSS @media and @import,
     — To target specific media for the <style>, <link>, <source>, and other HTML elements with the media= attribute,  
     — To test and monitor media states using the Window.matchMedia() and MediaQueryList.addListener() JavaScript methods.  
     ...  
     @media (max-width: 1200px) { /* … */ }
       `,
-            tags: ["css", "media queries"]
-        },
-        {
-            question: "How is responsive design different from adaptive design?",
-            answer: `Both designs attempt to optimize the user experience across different devices, adjusting for different viewport sizes, resolutions, usage contexts, control mechanisms, and so on.  
+        tags: ["css", "media queries"]
+    },
+    {
+        question: "How is responsive design different from adaptive design?",
+        answer: `Both designs attempt to optimize the user experience across different devices, adjusting for different viewport sizes, resolutions, usage contexts, control mechanisms, and so on.  
             **Responsive** design works on the principle of flexibility — a single fluid website that can look good on any device.  
             **Adaptive** design is more like the modern definition of progressive enhancement. Instead of one flexible design, adaptive design detects the device and other features, and then provides the appropriate feature and layout.
             It uses media queries and rem units, and can change the order of elements or them behaivor`,
-            tags: ["css", "design"]
-        },
-        {
-            question: "What is CSS?",
-            answer: `CSS stands for Cascading Style Sheet.  
+        tags: ["css", "design"]
+    },
+    {
+        question: "What is CSS?",
+        answer: `CSS stands for Cascading Style Sheet.  
             It's a style sheet language that determines how the elements/contents in the page are looked/shown.  
             CSS is used to develop a consistent look and feel for all the pages.  
             CSS3 or Cascading Style Sheets Level 3 is the third version of the CSS standard that is used to style and format web pages.  
             The main change in CSS3 is the inclusion of divisions of standards into different modules that makes CSS3 easier to learn and understand.`,
-            tags: ["css", "css3"]
-        },
-        {
-            question: 'What is the Box model in CSS? Which CSS properties are a part of it?',
-            answer: `A rectangle box is wrapped around every HTML element.  
+        tags: ["css", "css3"]
+    },
+    {
+        question: 'What is the Box model in CSS? Which CSS properties are a part of it?',
+        answer: `A rectangle box is wrapped around every HTML element.  
             The box model is used to determine the height and width of the rectangular box.
             The CSS Box consists of Width and height, padding, borders, margin.  
 - **Content:**  Actual Content of the box where the text or image is placed.  
 - **Padding**: Area surrounding the content (Space between the border and content).  
 - **Border**: Area surrounding the padding.  
 - **Margin**: Area surrounding the border`,
-            tags: ["css", "box model"]
-        },
-        {
-            question: 'What are the advantages of using CSS?',
-            answer: `The main advantages of CSS are given below:  
+        tags: ["css", "box model"]
+    },
+    {
+        question: 'What are the advantages of using CSS?',
+        answer: `The main advantages of CSS are given below:  
 - **Separation of content from presentation** - CSS provides a way to present the same content in multiple presentation formats in mobile or desktop or laptop.  
 - **Easy to maintain** - CSS, built effectively can be used to change the look and feel complete by making small changes. To make a global change, simply change the style, and all elements in all the web pages will be updated automatically.  
 - **Bandwidth** - Used effectively, the style sheets will be stored in the browser cache and they can be used on multiple pages, without having to download again.`,
-            tags: ["css", "css advantages"]
-        },
-        {
-            question: 'What are the limitations of CSS?',
-            answer: `Disadvantages of CSS are given below:  
+        tags: ["css", "css advantages"]
+    },
+    {
+        question: 'What are the limitations of CSS?',
+        answer: `Disadvantages of CSS are given below:  
 - **Browser Compatibility**: Some style selectors are supported and some are not. We can to determine which style is supported or not using the @support selector or use site caniuse.com.  
 - **Cross Browser issue**: Some selectors behave differently in a different browser.  
 - **There is no parent selector**: Currently, Using CSS, you can't select a parent tag`,
-            tags: ["css", "css disadvantages"]
-        },
+        tags: ["css", "css disadvantages"]
+    },
     {
         question: 'How to include CSS in the webpage?',
         answer: `There are different ways to include a CSS in a webpage:  
@@ -231,7 +231,7 @@ LESS syntax is the same as the SCSS with some exceptions. LESS uses @ to define 
 - px: pixel,
 - em: maintains relative size to parent element font-size. Example: width: 10rem,
 - rem: maintains relative size to <html> font-size, the Root Em.  ,
-- and some old units like pt, mm, cm from typography sphere`,  
+- and some old units like pt, mm, cm from typography sphere`,
         tags: ["css", "units"]
     },
     {
@@ -245,7 +245,7 @@ LESS syntax is the same as the SCSS with some exceptions. LESS uses @ to define 
 - It tells the browser to look for “Roboto” font and apply it.  
 - If the “Roboto” font is not installed or supported, then it asks the browser to use Times font.  
 - If both “Roboto” and Arial are not supported, then it asks the browser to use any supported generic font belonging to sans-serif.`
-,
+        ,
         tags: ["css", "fonts"]
     },
     {
@@ -263,7 +263,22 @@ LESS syntax is the same as the SCSS with some exceptions. LESS uses @ to define 
 - **div+p** select all p elements placed immediately after the div element,  
 - **div>p** select all p elements which has div as an immediate parent.
 `,
-        tags: ["css", "syntax", "~", ">", "+"]        
-    }   
+        tags: ["css", "syntax", "~", ">", "+"]
+    },
+    {
+        question: "What are the properties of flexbox?",
+        answer: `The properties of flexbox are as follows:  
+- **flex-direction**: defines the direction in the container: *row*, *column*, *row-reverse*, *column-reverse*,  
+- **flex-wrap**: specifies of the flex items should be wrapped or not: *wrap*, *no-wrap*, *wrap-reverse*,  
+- **flex-flow**: is used for setting both *flex-direction* and *flex-wrap*,  
+- **flex-grow**: used to stretch flex-items relative to other, the number. 1 means no stretch,
+- **flex-shrink**: used to shrink flex-items relative to other, the number. 1 means no shrink,
+- **flex-basis**: start width fo flex element, before changing: *auto*, *content* or just like a width in standart units,  
+- **justify-content**: Used for aligning the flex items along the main direction: *center*, *flex-start*, *flex-end*, *space-around*, *space-between*, *baseline*, *space-evenly*, *stretch*,  
+- **align-content**: it's like *justify-content*, used for aligning flex lines along auxiliary directon (can used with *flex-wrap*),  
+- **align-items**: used for aligning the flex items along the auxiliary directon: *center*, *flex-start*, *flex-end*, *center*, *stretch
+- **align-self**: changed the *align-items* value for one specific element`,
+        tags: ["css", "flex"]
+    }
 
 ];
