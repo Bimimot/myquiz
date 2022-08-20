@@ -247,6 +247,23 @@ LESS syntax is the same as the SCSS with some exceptions. LESS uses @ to define 
 - If both “Roboto” and Arial are not supported, then it asks the browser to use any supported generic font belonging to sans-serif.`
 ,
         tags: ["css", "fonts"]
-    }
+    },
+    {
+        question: "How is border-box different from content-box?",
+        answer: `*Content-box* is the default value box-sizing property. The height and the width properties consist only of the content by excluding the border and padding.  
+        The *border-box* property includes the content, padding and border in the height and width properties.`,
+        tags: ["css", "border-box", "contetn-box"]
+    },
+    {
+        question: "What do the following CSS selectors mean: *div,p / div p / div~p / div+p / div>p ?  ",
+        answer: `
+- **div,p** select all div elements and all p elements,  
+- **div p** select all p elemenst inside div,  
+- **div~p** select all p elements after div anywhere,  
+- **div+p** select all p elements placed immediately after the div element,  
+- **div>p** select all p elements which has div as an immediate parent.
+`,
+        tags: ["css", "syntax", "~", ">", "+"]        
+    }   
 
 ];
