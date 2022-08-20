@@ -1,14 +1,14 @@
 import { useCallback, useState, useEffect } from "react";
 import { Button } from "../button/button";
 import { Card } from "../card/card";
-import { TBtn, TCardProps } from "../../types";
+import { TBtn, TTag, TCardProps } from "../../types";
 import { cards } from "../../data/questions";
 import { getFreshItem, collectBtns, collectTags } from "../../helpers";
-import { InputTags } from "../search-form/input-tags";
+import { InputTags } from "../tags/input-tags";
 
 export const App = () => {
   const [btns, setBtns] = useState<TBtn[]>([]);
-  const [tags, setTags] = useState<string[]>([]);
+  const [tags, setTags] = useState<TTag[]>([]);
   const [card, setCard] = useState<TCardProps | null>(null);
   const [newCard, setNewCard] = useState<TCardProps | null>(null);
 
@@ -35,8 +35,8 @@ export const App = () => {
       <div className="row-items">
         <h1 className="app__title">MY QUIZ</h1>
       </div>
-      <InputTags tags={tags} onChoiceCallback={(tag: string) => console.log("TAG =>", tag)} />
-      <div className="row-items">
+
+      <div className="row-items row-items_space_between">
         {btns.map((b, i) => (
           <Button
             text={b.theme}
@@ -47,6 +47,7 @@ export const App = () => {
           />
         ))}
       </div>
+      <InputTags tags={tags} />
       {card && <Card card={card} />}
     </div>
   );

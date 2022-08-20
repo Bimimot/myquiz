@@ -13,3 +13,8 @@ export type TCards = {
 export type TThemes = "html" | "css" | "js" | "ts" | "react";
 
 export type TCardProps = { color: string; item: TCard }
+
+export type TTag = {
+    text: string,
+    color: string
+}

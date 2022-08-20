@@ -34,8 +34,11 @@ html {
     display: flex;
     position: relative;
     flex-direction: row;
-    justify-content: space-between;
     padding: 1rem 0;
     flex-wrap: wrap;
     gap: 1rem;
+
+    &_space_between {
+        justify-content: space-between;
+    }
 }
