@@ -279,6 +279,45 @@ LESS syntax is the same as the SCSS with some exceptions. LESS uses @ to define 
 - **align-items**: used for aligning the flex items along the auxiliary directon: *center*, *flex-start*, *flex-end*, *center*, *stretch
 - **align-self**: changed the *align-items* value for one specific element`,
         tags: ["css", "flex"]
+    },
+    {
+        question: "What are the different ways to hide the element using CSS?",
+        answer: `
+- **display: none;** The element will not exist in the DOM,
+- **visibility: hidden;** The element will actually be present in the DOM, but not shown on the screen. The element will take up the space
+- **opacity: 1;** The element wil be completely transparent,  
+- **z-index: -1;** The element will lay under the parent element,
+- **position: absolute;** The element can be placed outside the screen`,
+        tags: ["css", "display", "visibility", "opacity"]
+    },
+    {
+        question: "How do I restore the default value of a property?",
+        answer: `The keyword *initial* can be used to reset it to its default value.`,
+        tags: ["css", "initial", "default"]
+    },
+    {
+        question: "What does !important mean in CSS?",
+        answer: `The style is having the important will have the highest precedence and it overrides the cascaded property`,
+        tags: ["css", "important"]
+
+    },
+    {
+        question: "Difference between CSS grid vs flexbox?",
+        answer: `
+- CSS Grid Layout is a two-dimensional system, meaning it can handle both columns and rows. Grid layout is intended for larger-scale layouts which aren't linear in design.  
+- Flexbox is largely a one-dimensional system (either in a column or a row). Flexbox layout is most appropriate to the components of an application.`,
+        tags: ["css", "flex", "grid"]
+
+    },
+    {
+        question: "How does Calc work?",
+        answer: `The CSS3 calc() function allows us to perform mathematical operations on property values.  
+        ${"```"}
+        .example {
+            width: calc(50px + 50%);
+        }
+        ${"```"}`,
+        tags: ["css", "calc"]
     }
 
 ];
