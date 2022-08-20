@@ -119,13 +119,6 @@ ul {...}
         question: "What is VH/VW (viewport height/ viewport width) in CSS?",
         answer: `It's a CSS unit used to measure the height and width in percentage with respect to the viewport.  
 It is used mainly in responsive design techniques. The measure VH is equal to 1/100 of the height of the viewport.  
-If the height of the browser is 1000px, 1vh is equal to 10px. Similarly, if the width is 1000px, then 1 vw is equal to 10px.`,
-        tags: ["css", "vh", "vw"]
-    },
-    {
-        question: "What is VH/VW (viewport height/ viewport width) in CSS?",
-        answer: `It's a CSS unit used to measure the height and width in percentage with respect to the viewport.  
-It is used mainly in responsive design techniques. The measure VH is equal to 1/100 of the height of the viewport.  
 If the height of the browser is 1000px, 1vh is equal to 10px. Similarly, if the width is 1000px, then 1 vw is equal to 10px.  `,
         tags: ["css", "vh", "vw"]
     },
@@ -193,5 +186,67 @@ They will also take space for an entire row or width. List of block elements are
         ${"```"}  
         Here, the element to which the class is applied ensures that the element is positioned on the right of the container.`,
         tags: ["css", "float"]
+    },
+    {
+        question: "What is a CSS Preprocessor? What are Sass, Less, and Stylus? Why do people use them?",
+        answer: `A CSS Preprocessor is a tool used to extend the basic functionality of default vanilla CSS.  
+        It helps us to use complex logical syntax like – variables, functions, mixins, code nesting, and inheritance to name a few, supercharging your vanilla CSS.
+        **SASS**: Sass is the acronym for “Syntactically Awesome Style Sheets”. SASS can be written in two different syntaxes using SASS or SCSS
+**SASS vs SCSS**  
+- SASS uses .sass extension while SCSS uses .scss extension.  
+- SASS doesn't use curly brackets or semicolons. SCSS uses it, just like the CSS.  
+**LESS**: LESS is an acronym for “Leaner Stylesheets”  
+LESS syntax is the same as the SCSS with some exceptions. LESS uses @ to define the variables.  
+`,
+        tags: ["css", "scss", "sass", "less"]
+    },
+    {
+        question: "Is it important to test the webpage in different browsers?",
+        answer: `It's most important to test a website in different browsers when you're first designing it, or when making major changes.  
+        However, it's also important to repeat these tests periodically, since browsers go through a lot of updates and changes.`,
+        tags: ["css", "test", "browser"]
+    },
+    {
+        question: "What are Pseudo elements and Pseudo classes?",
+        answer: `**Pseudo-elements** allows us to create items that do not normally exist in the document tree.  
+- ::after - creates a new element  
+- ::before - creates a new element  
+- ::first-letter - changes a style for part of element.  
+**Pseudo-classes** select regular elements but under certain conditions like when the user is hovering over the link.  
+- :visited  
+- :hover  
+- :active  
+- :focus  
+- :first-child  
+- :nth-child(2n+1)`
+    },
+    {
+        question: "Does margin-top or margin-bottom have an effect on inline elements?",
+        answer: `No, it doesn’t affect the inline elements. Inline elements flow with the contents of the page.`,
+        tags: ["css", "iniline", "margin"]
+    },
+    {
+        question: "How do you specify units in the CSS?. What are the different ways to do it?",
+        answer: `There are different ways to specify units in CSS like px, em, rem, percentage (%).  
+- px: pixel,
+- em: maintains relative size to parent element font-size. Example: width: 10rem,
+- rem: maintains relative size to <html> font-size, the Root Em.  ,
+- and some old units like pt, mm, cm from typography sphere`,  
+        tags: ["css", "units"]
+    },
+    {
+        question: "What property is used for changing the font face?",
+        answer: `We can use the font-family property for achieving this.  
+        ${"```"}  
+        p {
+            font-family: "Roboto", Arial, sans-serif;
+        }  
+        ${"```"}  
+- It tells the browser to look for “Roboto” font and apply it.  
+- If the “Roboto” font is not installed or supported, then it asks the browser to use Times font.  
+- If both “Roboto” and Arial are not supported, then it asks the browser to use any supported generic font belonging to sans-serif.`
+,
+        tags: ["css", "fonts"]
     }
+
 ];
