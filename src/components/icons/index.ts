@@ -1,7 +1,7 @@
-import { IconClose } from "./IconClose";
-import { IconSearch } from "./IconSearch";
-import { IconPlus } from "./IconPlus";
-import { IconMinus } from "./IconMinus";
+import { IconClose } from "./icon-close";
+import { IconSearch } from "./icon-search";
+import { IconPlus } from "./icon-plus";
+import { IconMinus } from "./icon-minus";
 
 export {
     IconClose,

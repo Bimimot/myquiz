@@ -3,7 +3,7 @@ export type TBtn = { color: string; theme: TThemes, count: number };
 export type TCard = {
     question: string,
     answer: string,
-    tags?: string[]
+    tags: string[]
 }
 
 export type TCards = {

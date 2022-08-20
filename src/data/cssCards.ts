@@ -218,7 +218,8 @@ LESS syntax is the same as the SCSS with some exceptions. LESS uses @ to define 
 - :active  
 - :focus  
 - :first-child  
-- :nth-child(2n+1)`
+- :nth-child(2n+1)`,
+        tags: ["css", "pseudo"]
     },
     {
         question: "Does margin-top or margin-bottom have an effect on inline elements?",
