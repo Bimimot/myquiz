@@ -137,6 +137,52 @@ foo.publicFn();
 ${"```"}
         `,
         tags: ["js", "scope", "closures"]
+    },
+    {
+        question: "What does the || operator do?",
+        answer: `The || or Logical OR operator finds the first truthy expression in its operands and returns it. `,
+        tags: ["js", "or", "||"]
+    },
+    {
+        question: "What is the fastest way to converting a string to a number? ",
+        answer: "According to MDN Documentation the + is the fastest way of converting a string to a number because it does not perform any operations on the value if it is already a number.",
+        tags: ["js", "number", "converting", "string"]        
+    },
+    {
+        question: "Why does comparing two similar objects in JavaScript return *false*?",
+        answer: "JavaScript compares objects and primitives differently. In primitives it compares them by value while in objects it compares them by reference or the address in memory where the variable is stored.",
+        tags: ["js", "object", "comparing"]
+    },
+    {
+        question: "What does the !! operator do?",
+        answer: `he Double NOT operator or !! coerces the value on the right side into a boolean.  
+        Basically it's a fancy way of converting a value into a boolean.`,
+        tags: ["js", "!!"]
+    },
+    {
+        question: "How to evaluate multiple expressions in one line? ",
+        answer: `We can use the , or comma operator to evaluate multiple expressions in one line.  
+        It evaluates from left-to-right and returns the value of the last item on the right or the last operand.
+${"```"}
+        let x = 5;
+        x = (x++ , x = addFive(x), x *= 2, x -= 5, x += 10);
+        function addFive(num) {
+        return num + 5;
+        }
+${"```"}
+`,
+        tags: ["js"]
+    },
+    {
+        question: "What are Higher Order Functions? ",
+        answer: `Higher-Order Function are functions that can return a function or receive argument or arguments which have a value of a function.  
+        ${"```"}
+        function higherOrderFunction(param,callback){
+            return callback(param);
+        }
+
+        ${"```"}`,
+        tags: ["js", "HOF", "high order function"]
     }
 
 ];
