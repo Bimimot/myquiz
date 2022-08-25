@@ -183,6 +183,27 @@ ${"```"}
 
         ${"```"}`,
         tags: ["js", "HOF", "high order function"]
+    },
+    {
+        question: "How to check if a value is falsy? ",
+        answer: `Use the Boolean function or the Double NOT operator !!`,
+        tags: ["js", "falsy", "boolean"]
+    },
+    {
+        question: "What is the prototype of an object?",
+        answer: `A prototype in simplest terms is a blueprint of an object 
+        It is used as a fallback for properties and methods if it does exist in the current object.
+        ${"```"}
+        const o = {};
+        console.log(o.toString()); // logs [object Object]
+        ${"```"}
+        It's the way to share properties and functionality between objects. It's the core concept around JavaScript's **Prototypal Inheritance**.
+        Even though the *o.toString* method does not exist in the *o* object it does not throw an error instead returns a string *[object Object]*. When a property does not exist in the object it looks into its prototype and if it still does not exist it looks into the **prototype's prototype** and so on until it finds a property with the same in the **Prototype Chain**.
+        The end of the **Prototype Chain** is the Object.prototype.
+
+        console.log(o.toString === Object.prototype.toString); // logs true
+        `,
+        tags: ["js", "prototype", "object"]
     }
 
 ];
