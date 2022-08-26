@@ -26,7 +26,8 @@ export const jsCards: TCard[] = [
     {
         question: "What is the typeof null?",
         answer: `typeof null === “object”;  
-        Now it's a specification and it's a rudiment from first implementation JS.`,
+        Now it's a specification and it's a rudiment from first implementation JS.
+        A fix was proposed to change typeof null == 'object' to typeof null == 'null' but was rejected because it will lead to more bugs.`,
         tags: ["js", "types", "null"]
     },
     {
@@ -44,7 +45,7 @@ Typeof alert(a) === “function”`,
         — symbol,  
         — bigint,  
         — null,  
-        — undefined.
+        — undefined.  
         Plus the 'object'`,
         tags: ["js", "types"]
     },
@@ -82,7 +83,7 @@ Typeof alert(a) === “function”`,
     {
         question: "How to check null?",
         answer: `The typeof ***null*** is **object**, so  
-        we should use
+        we should use We can use strict equality operator to check if a value is null.
         ${"```"}
         if (value === null) { ... }
         ${"```"}
@@ -146,7 +147,7 @@ ${"```"}
     {
         question: "What is the fastest way to converting a string to a number? ",
         answer: "According to MDN Documentation the + is the fastest way of converting a string to a number because it does not perform any operations on the value if it is already a number.",
-        tags: ["js", "number", "converting", "string"]        
+        tags: ["js", "number", "converting", "string"]
     },
     {
         question: "Why does comparing two similar objects in JavaScript return *false*?",
@@ -155,7 +156,7 @@ ${"```"}
     },
     {
         question: "What does the !! operator do?",
-        answer: `he Double NOT operator or !! coerces the value on the right side into a boolean.  
+        answer: `The Double NOT operator or !! coerces the value on the right side into a boolean.  
         Basically it's a fancy way of converting a value into a boolean.`,
         tags: ["js", "!!"]
     },
@@ -204,6 +205,175 @@ ${"```"}
         console.log(o.toString === Object.prototype.toString); // logs true
         `,
         tags: ["js", "prototype", "object"]
+    },
+    {
+        question: "What does the new keyword do?",
+        answer: `The *new* keyword is used with constructor functions to make objects
+in JavaScript.  
+Suppose we have an example code below.  
+${"```"}
+function Employee(name, position, yearHired) {
+  this.name = name;
+  this.position = position;
+  this.yearHired = yearHired;
+};
+
+const emp = new Employee("Marko Polo", "Software Developer", 2022);
+${"```"}`,
+        tags: ["js", "new"]
+    },
+    {
+        question: "What is memoization and what's the use it?",
+        answer: `*Memoization* is a process of building a function that is capable of **remembering** it's previously computed results or values.
+The use of making a *memoization* function is that we avoid the computation of that function if it was already performed in the last calculations with the same arguments.
+This saves time but has a downside that we will consume more memory for saving the previous results.`,
+        tags: ["js", "memoization"]
+    },
+    {
+        question: "What are the ways to deal with Asynchronous Code in JavasScript?",
+        answer: `
+- Callbacks,  
+- Promises,
+- async/await,
+- or special libraries`,
+        tags: ["js", "asynchronous"]
+    },
+    {
+        question: "What is a Callback function?",
+        answer: `A Callback function is a function that is gonna get called at a later point in time.
+        ${"```"}
+        const btnAdd = document.getElementById('btnAdd');
+
+        btnAdd.addEventListener('click', function clickCallback(e) {
+            // do something useless
+        });
+        ${"```"}  
+In this example, we wait for the *click event* in the element with an id of **btnAdd**. When it is clicked, the clickCallback function is executed.  
+A **Callback** function adds some functionality to some data or event.  
+The reduce, filter and map methods in Array expects a callback as a parameter.  
+A good analogy for a callback is when you call someone and if they don't answer you leave a message and you expect them to **callback**. 
+        `,
+        tags: ["js", "callback"]
+    },
+    {
+        question: "What is AJAX?",
+        answer: `**AJAX** stands for Asynchronous JavaScript and XML.  
+        It is a group of related technologies used to display data asynchronously. 
+        What this means is that we can send data to the server and get data from the server without reloading the web page.  
+        Technologies use for AJAX.
+- **HTML**, web page structure
+- **CSS**, web page style
+- **JavaScript** - the behaviour of the webpage and updates to the DOM,
+- **XMLHttpRequest API** - used to send and retrieve data from the server,
+- **PHP,Python,Nodejs** - Some Server-Side language`,
+
+        tags: ["js", "AJAX"]
+    },
+    {
+        question: "How to check if a certain property exists in an object?",
+        answer: `There are three possible ways to check if a property exists in an object.  
+- "prop" in someObject (return false or true),  
+- someObject.hasOwnProperty("prop") (return false or true),
+- someObj[prop] (retun *prop* or undefined)`,
+        tags: ["js", "object"]
+    },
+    {
+        question: "How to check if a value is an Array?",
+        answer: `We can check if a value is an Array by using the Array.isArray method available from the Array global object.
+        It returns true when the parameter pass to it is an Array otherwise false.
+        Array.isArray([])
+          
+        If your environment does not support this method you can use the polyfill implementation.
+        ${"```"}
+           function isArray(value){
+                return Object.prototype.toString.call(value) === "[object Array]"
+            } 
+        ${"```"}`,
+        tags: ["js", "isArray"]
+    },
+    {
+        question: "What is async/await and How does it work?",
+        answer: `async/await is the new way of writing asynchronous or non-blocking code in JavaScript's.
+        It is built on top of Promises.
+        Using Promises.
+        ${"```"}
+            return fetch("url/to/api/endpoint")
+                .then(resp => resp.json())
+                .then(data => {
+                    //do something with "data"
+                })
+                .catch(err => {
+                    //do something with "err"
+                });
+        ${"```"}
+          
+        Using async/await.
+        ${"```"}
+        async function callApi() {
+            try {
+                const resp = await fetch("url/to/api/endpoint");
+                const data = await resp.json();
+                //do something with "data"
+            } catch (e) {
+                //do something with "err"
+            }
+            }
+        ${"```"}
+        `,
+        tags: ["js"]
+    },
+    {
+        question: "What is the Set object and how does it work?",
+        answer: `The Set object is an ES6 feature that lets you store unique values, primitives or object references.  
+        A value in a Set can only occur once.
+        We can make Set instance using Set constructor and we can optionally pass an Iterable as the initial value.
+        ${"```"}
+            const set1 = new Set();
+            const set2 = new Set(["a","b","c","d","d","e"]);
+        ${"```"}
+        We can add a new value into the Set instance using the add method and since the add returns the Set object we can chain add calls.  
+        If a value already exists in Set object it will not be added again.
+        ${"```"}
+            set2.add("f");
+            set2.add("g").add("h").add("i").add("j").add("k").add("k");
+            // the last "k" will not be added
+        ${"```"}  
+        We can remove a value from the Set instance using the delete method,
+        this method returns a boolean indicating true if a value exists in the Set object and false indicating that value does not exist.
+        ${"```"}
+            set2.delete("k")            
+        ${"```"}  
+        We can check if a specific value exists in the Set instance using the has method.
+        ${"```"}
+            set2.has("k")            
+        ${"```"}
+        We can get the length of the Set instance using the size property.
+        ${"```"}
+            set2.size            
+        ${"```"}
+        We can delete or remove all the elements in the Set instance using the clear.
+        ${"```"}
+            set2.clear();           
+        ${"```"}
+        We can use the Set object for removing duplicate elements in an array.
+        ${"```"}
+            const numbers = [1, 2, 3, 4, 5, 6, 6, 7, 8, 8, 5];
+            const uniqueNums = [...new Set(numbers)];        
+        ${"```"}
+        `,
+        tags: ["js", "set"]
+    },
+    {
+        question: "What is Object Destructuring?",
+        answer: `Object Destructuring is a clean way of getting or extracting values from an object or an array.    
+        let { firstName, lastName, position, yearHired } = employee;
+          
+        If we want to change the variable name we want to extract we use the *propertyName:newName* syntax.
+        let { firstName: fName, lastName: lName, position } = employee;
+          
+        We can also have default values when destructuring.
+        let { firstName = "Mark", lastName: lName, position, yearHired } = employee;`,
+        tags: ["js", "object", "destructuring"]
     }
 
 ];
