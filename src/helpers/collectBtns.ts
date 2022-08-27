@@ -1,4 +1,4 @@
-import { TBtn, TCards, TThemes } from "../types";
+import { TBtn, TCards } from "../types";
 import { arrColors } from "./";
 
 export const collectBtns = (cards: TCards): TBtn[] => {
@@ -7,7 +7,7 @@ export const collectBtns = (cards: TCards): TBtn[] => {
     for (let [key, value] of Object.entries(cards)) {
         mapBtns.push({
             color: arrColors[i],
-            theme: key as TThemes,
+            theme: key,
             count: value.length
         });
         i++;

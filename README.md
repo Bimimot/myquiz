@@ -58,10 +58,7 @@ export const cards: TCards = {
     newTheme: newThemeCards,
 }
 ```
-3. Update *TThemes* type in src/types/index:
-```
-export type TThemes = "html" | "css" | "js" | "ts" | "react" | **"newTheme"**;
-```
+
 
 It's all.
 Now app can create 12 buttons and has 12 standart CSS color values here: src/scss/btnColors

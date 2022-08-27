@@ -1,8 +1,6 @@
-export type TThemes = "html" | "css" | "js" | "ts" | "react";
-
 export type TBtn = {
     color: string;
-    theme: TThemes,
+    theme: string,
     count: number
 }
 
@@ -13,7 +11,7 @@ export type TCard = {
 }
 
 export type TCards = {
-    [key in TThemes]: TCard[]
+    [key in string]: TCard[]
 }
 
 

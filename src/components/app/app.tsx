@@ -1,10 +1,8 @@
 import { useCallback, useState, useEffect } from "react";
-import { Button } from "../button/button";
-import { Card } from "../card/card";
 import { TBtn, TTag, TCardProps } from "../../types";
-import { cards } from "../../data/questions";
+import { Button, Card, InputTags } from "../";
+import { cards } from "../../data";
 import { getFreshItem, collectBtns, collectTags } from "../../helpers";
-import { InputTags } from "../tags/input-tags";
 
 export const App = () => {
   const [btns, setBtns] = useState<TBtn[]>([]);
