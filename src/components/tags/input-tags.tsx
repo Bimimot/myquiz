@@ -48,6 +48,11 @@ export const InputTags: FC<TInputTags> = (props) => {
     [tags, state, setState]
   );
 
+  const clickOption = useCallback((tag: TTag) => {
+    dispatch(addTag({ tag }));
+    setState({...initState, userInput: tag.text});
+  }, []);
+
   const { filteredTags, showOptions, userInput } = state;
 
   return (
@@ -66,7 +71,7 @@ export const InputTags: FC<TInputTags> = (props) => {
               <li
                 className={`autocomplete__option autocomplete__option_color_${tag.color}`}
                 key={index}
-                onClick={() => dispatch(addTag({ tag }))}
+                onClick={() => clickOption(tag)}
               >
                 {tag.text}
               </li>
