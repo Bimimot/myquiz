@@ -5,8 +5,7 @@ import { Button, IconPlus, IconMinus } from "..";
 
 export const Card = memo(
   (props: { card: TCardProps }) => {
-    const { color, item } = props.card;
-    const { question, answer, tags = [] } = item;
+    const { color, question, answer, tags = [] } = props.card;
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {

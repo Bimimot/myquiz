@@ -10,15 +10,14 @@ export type TCard = {
     tags: string[]
 }
 
+export type TCardProps = TCard & {
+    color: string
+}
+
 export type TCards = {
     [key in string]: TCard[]
 }
 
-
-export type TCardProps = {
-    color: string;
-    item: TCard
-}
 
 export type TTag = {
     text: string,

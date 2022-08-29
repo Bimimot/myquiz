@@ -1,24 +1,17 @@
-import { useCallback, useState, useEffect } from "react";
-import { TBtn, TTag } from "../../types";
+import { useCallback } from "react";
+import { TBtn} from "../../types";
 import { Button, Cards, InputTags } from "../";
-import { cards } from "../../data";
-import { collectBtns, collectTags } from "../../helpers";
+import { collectedData } from "../../data";
 import { useDispatch } from "../../store";
 import { getRandom, clearCards } from "../../store/reducerCards";
 
 export const App = () => {
-  const [btns, setBtns] = useState<TBtn[]>([]);
-  const [tags, setTags] = useState<TTag[]>([]);
+  const { btns, tags } = collectedData;
   const dispatch = useDispatch();
 
   const clickBtn = useCallback((btn: TBtn) => {
     dispatch(clearCards());
     setTimeout(() => dispatch(getRandom({ btn })), 0); //for animation
-  }, []);
-
-  useEffect(() => {
-    setBtns(collectBtns(cards));
-    setTags(collectTags(cards));
   }, []);
 
   return (

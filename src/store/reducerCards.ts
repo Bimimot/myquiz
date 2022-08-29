@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { cards } from "../data";
+import { collectedData } from "../data";
 import { TBtn, TCardProps, TCard } from '../types';
+
+const {cards} =  collectedData ;
 
 type TStateCards = {
     cards: TCardProps[],
@@ -18,10 +20,10 @@ const cardsSlice = createSlice({
     reducers: {
         getRandom: (state: TStateCards, action: PayloadAction<{ btn: TBtn }>) => {
             const { btn } = action.payload;
-            const arr: TCard[] = cards[btn.theme] || [];
+            const arr = cards[btn.theme] || [];
             const index = Math.floor(Math.random() * (arr.length));
             
-            state.cards = !!arr.length ? [{item: arr[index], color: btn.color}] : [];
+            state.cards = !!arr.length ? [arr[index]] : [];
             state.tags= []            
         },
         addTag: (state: TStateCards, action: PayloadAction<{ tag: string }>) => {
