@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { collectedData } from "../data";
-import { TBtn, TCardProps, TCard } from '../types';
+import { TBtn, TCardProps, TTag } from '../types';
 
-const {cards} =  collectedData ;
+const { cards } = collectedData;
 
 type TStateCards = {
     cards: TCardProps[],
-    tags: string[]
+    tag: TTag | null
 };
 
 const initStateCards = {
     cards: [],
-    tags: []
+    tag: null
 };
 
 const cardsSlice = createSlice({
@@ -22,45 +22,32 @@ const cardsSlice = createSlice({
             const { btn } = action.payload;
             const arr = cards[btn.theme] || [];
             const index = Math.floor(Math.random() * (arr.length));
-            
-            state.cards = !!arr.length ? [arr[index]] : [];
-            state.tags= []            
-        },
-        addTag: (state: TStateCards, action: PayloadAction<{ tag: string }>) => {
-            const tags = state.tags.concat(action.payload.tag);
-            const cards = getCardsByTags(tags);
 
-            state.tags = tags;
-            state.cards = [];
+            state.cards = !!arr.length ? [arr[index]] : [];
+            state.tag = null
         },
-        delTag: (state: TStateCards, action: PayloadAction<{ tag: string }>) => {
-            const tags = state.tags.filter(tag => tag !== action.payload.tag);
-            const cards = !!tags.length ? getCardsByTags(tags) : []
-            
-            state.tags = tags;
-            state.cards = [];
+        addTag: (state: TStateCards, action: PayloadAction<{ tag: TTag }>) => {
+            const tagedCards: TCardProps[] = [];
+
+            for (let themeCards of Object.values(cards)) {
+                tagedCards.push(...themeCards.filter(({ tags }) => tags.includes(action.payload.tag.text)));
+            };
+
+            state.tag = action.payload.tag;
+            state.cards = tagedCards;
         },
         clearCards: (state: TStateCards) => {
             state.cards = [];
-            state.tags = []
+            state.tag = null
         }
     }
 });
 
-//-----------helper------------
-const getCardsByTags = (tags: string[]) => {
-    const taged: TCard[] = [];
-    for (let theme in cards) {
-        taged.concat(cards[theme].filter(card => card.tags.every(tag => tags.includes(tag))));
-    };
-    return taged
-};
-//-----------------------------
 
 const { reducer, actions } = cardsSlice;
-const { getRandom, addTag, delTag, clearCards } = actions;
+const { getRandom, addTag, clearCards } = actions;
 
 export {
     reducer as rootReducer, actions,
-    getRandom, addTag, delTag, clearCards
+    getRandom, addTag, clearCards
 }

@@ -1,4 +1,6 @@
 import { FC, useState, useCallback, useMemo } from "react";
+import { useDispatch } from "../../store";
+import { addTag } from "../../store/reducerCards";
 import { TTag } from "../../types/";
 
 type TInputTags = {
@@ -7,7 +9,6 @@ type TInputTags = {
 
 type TInputAutoTags = {
   filteredTags: TTag[];
-  checkedTags: TTag[];
   showOptions: boolean;
   userInput: string;
 };
@@ -19,7 +20,6 @@ export const InputTags: FC<TInputTags> = (props) => {
   const initState: TInputAutoTags = useMemo(
     () => ({
       filteredTags: [],
-      checkedTags: [],
       showOptions: false,
       userInput: "",
     }),
@@ -27,12 +27,15 @@ export const InputTags: FC<TInputTags> = (props) => {
   );
 
   const [state, setState] = useState<TInputAutoTags>(initState);
+  const dispatch = useDispatch();
 
   const onChangeInput = useCallback(
     (event: { currentTarget: { value: string } }) => {
-      const userInput = (event.currentTarget.value).toLowerCase() || "";
+      const userInput = event.currentTarget.value.toLowerCase() || "";
       const filteredTags = userInput
-        ? tags.filter((tag) => tag.text.startsWith(userInput)).sort((a,b) => a.text < b.text ? -1 : 1)
+        ? tags
+            .filter((tag) => tag.text.startsWith(userInput))
+            .sort((a, b) => (a.text < b.text ? -1 : 1))
         : [];
 
       setState({
@@ -45,15 +48,7 @@ export const InputTags: FC<TInputTags> = (props) => {
     [tags, state, setState]
   );
 
-  const onClickOption = useCallback(
-    (tag: TTag) => {
-      const checkedTags: TTag[] = state.checkedTags.concat(tag);
-      setState({ ...initState, checkedTags });
-    },
-    [setState, initState, state.checkedTags]
-  );
-
-  const { filteredTags, checkedTags, showOptions, userInput } = state;
+  const { filteredTags, showOptions, userInput } = state;
 
   return (
     <>
@@ -71,7 +66,7 @@ export const InputTags: FC<TInputTags> = (props) => {
               <li
                 className={`autocomplete__option autocomplete__option_color_${tag.color}`}
                 key={index}
-                onClick={() => onClickOption(tag)}
+                onClick={() => dispatch(addTag({ tag }))}
               >
                 {tag.text}
               </li>
@@ -79,18 +74,6 @@ export const InputTags: FC<TInputTags> = (props) => {
           </ul>
         )}
       </div>
-      <CheckedTags tags={checkedTags} />
     </>
   );
 };
-
-const CheckedTags: FC<TInputTags> = (props) => {
-  const {tags} = props
-  return (
-    <div className="row-items">
-      {tags.map((tag, i) => (
-        <div className={`tag tag_color_${tag.color}`} key={i}>{tag.text}</div>
-      ))}
-    </div>
-  );
-}

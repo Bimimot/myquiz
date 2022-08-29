@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { TBtn} from "../../types";
-import { Button, Cards, InputTags } from "../";
+import { ThemeButtons, Cards, InputTags } from "../";
 import { collectedData } from "../../data";
 import { useDispatch } from "../../store";
 import { getRandom, clearCards } from "../../store/reducerCards";
@@ -19,18 +19,7 @@ export const App = () => {
       <div className="row-items">
         <h1 className="app__title">MY QUIZ</h1>
       </div>
-
-      <div className="row-items row-items_space_between">
-        {btns.map((b, i) => (
-          <Button
-            text={b.theme}
-            subText={b.count.toString()}
-            color={b.color}
-            key={i}
-            newClick={() => clickBtn(b)}
-          />
-        ))}
-      </div>
+      <ThemeButtons btns={btns} callbackBtn={clickBtn} />
       <InputTags tags={tags} />
       <Cards />
     </div>
