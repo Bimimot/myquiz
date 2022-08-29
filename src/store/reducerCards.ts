@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { cards } from "../data";
-import { TCard } from '../types';
+import { TBtn, TCardProps, TCard } from '../types';
 
 type TStateCards = {
-    cards: TCard[],
+    cards: TCardProps[],
     tags: string[]
 };
 
@@ -16,28 +16,31 @@ const cardsSlice = createSlice({
     name: "cards",
     initialState: initStateCards,
     reducers: {
-        getRandom: (state: TStateCards, action: PayloadAction<{ theme: string }>) => {
-            const arr: TCard[] = cards[action.theme] || [];
+        getRandom: (state: TStateCards, action: PayloadAction<{ btn: TBtn }>) => {
+            const { btn } = action.payload;
+            const arr: TCard[] = cards[btn.theme] || [];
             const index = Math.floor(Math.random() * (arr.length));
-            return {
-                cards: [arr[index]],
-                tags: []
-            }
+            
+            state.cards = !!arr.length ? [{item: arr[index], color: btn.color}] : [];
+            state.tags= []            
         },
-
-        clearCards: (state: TStateCards) => ({
-            cards: [],
-            tags: []
-        }),
         addTag: (state: TStateCards, action: PayloadAction<{ tag: string }>) => {
-            const tags = state.tags.concat(action.tag);
+            const tags = state.tags.concat(action.payload.tag);
             const cards = getCardsByTags(tags);
-            return { cards, tags }
+
+            state.tags = tags;
+            state.cards = [];
         },
         delTag: (state: TStateCards, action: PayloadAction<{ tag: string }>) => {
-            const tags = state.tags.filter(tag => tag !== action.tag);
+            const tags = state.tags.filter(tag => tag !== action.payload.tag);
             const cards = !!tags.length ? getCardsByTags(tags) : []
-            return { cards, tags }
+            
+            state.tags = tags;
+            state.cards = [];
+        },
+        clearCards: (state: TStateCards) => {
+            state.cards = [];
+            state.tags = []
         }
     }
 });
@@ -53,5 +56,9 @@ const getCardsByTags = (tags: string[]) => {
 //-----------------------------
 
 const { reducer, actions } = cardsSlice;
+const { getRandom, addTag, delTag, clearCards } = actions;
 
-export { reducer as rootReducer, actions }
+export {
+    reducer as rootReducer, actions,
+    getRandom, addTag, delTag, clearCards
+}

@@ -1,27 +1,20 @@
 import { useCallback, useState, useEffect } from "react";
-import { TBtn, TTag, TCardProps } from "../../types";
-import { Button, Card, InputTags } from "../";
+import { TBtn, TTag } from "../../types";
+import { Button, Cards, InputTags } from "../";
 import { cards } from "../../data";
-import { getFreshItem, collectBtns, collectTags } from "../../helpers";
+import { collectBtns, collectTags } from "../../helpers";
+import { useDispatch } from "../../store";
+import { getRandom, clearCards } from "../../store/reducerCards";
 
 export const App = () => {
   const [btns, setBtns] = useState<TBtn[]>([]);
   const [tags, setTags] = useState<TTag[]>([]);
-  const [card, setCard] = useState<TCardProps | null>(null);
-  const [newCard, setNewCard] = useState<TCardProps | null>(null);
+  const dispatch = useDispatch();
 
   const clickBtn = useCallback((btn: TBtn) => {
-    const newCard = getFreshItem(cards[btn.theme]);
-    setCard(null);
-    setNewCard({ color: btn.color, item: newCard });
+    dispatch(clearCards());
+    setTimeout(() => dispatch(getRandom({ btn })), 0); //for animation
   }, []);
-
-  //useEffect for animation  - hide card & render again
-  useEffect(() => {
-    if (newCard) {
-      setCard(newCard);
-    }
-  }, [newCard]);
 
   useEffect(() => {
     setBtns(collectBtns(cards));
@@ -46,7 +39,7 @@ export const App = () => {
         ))}
       </div>
       <InputTags tags={tags} />
-      {card && <Card card={card} />}
+      <Cards />
     </div>
   );
 };

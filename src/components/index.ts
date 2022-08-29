@@ -1,5 +1,5 @@
 import { Button } from "./button/button";
-import { Card } from "./card/card";
+import { Cards } from "./cards/cards";
 import { InputTags } from "./tags/input-tags";
 import {
     IconClose,
@@ -10,7 +10,7 @@ import {
 
 export {
     Button,
-    Card,
+    Cards,
     InputTags,
     IconClose,
     IconSearch,

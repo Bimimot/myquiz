@@ -1,7 +1,7 @@
 import { useEffect, useState, memo } from "react";
 import ReactMarkdown from "react-markdown";
 import { TCardProps } from "../../types";
-import { Button, IconPlus, IconMinus } from "../";
+import { Button, IconPlus, IconMinus } from "..";
 
 export const Card = memo(
   (props: { card: TCardProps }) => {
