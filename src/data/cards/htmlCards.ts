@@ -40,7 +40,7 @@ ${"```"}
 — email,  
 — month,  
 — number range.  `,
-        tags: ["html", "input"]
+        tags: ["html", "input", "html5"]
     },
     {
         question: "What is HTML5 Web Storage? Explain localStorage and sessionStorage.",
@@ -50,6 +50,59 @@ ${"```"}
         — SessionStorage has the same lifetime as the top-level window or browser tab in which the data got stored. When the tab is permanently closed, any data stored through sessionStorage is deleted.
 `,
         tags: ["html", "storage", "localStorage", "sessionStorage"]
+    },
+    {
+        question: "What's new in HTML 5?",
+        answer: ` HTML 5 adds a lot of new features to the HTML specification.  
+### New Doctype
+- <!DOCTYPE html>
+### New Structure
+- <section> to define sections of pages
+- <header> - defines the header of a page
+- <footer> - defines the footer of a page
+- <nav> - defines the navigation on a page
+- <article> - defines the article or primary content on a page
+- <aside> - defines extra content like a sidebar on a page
+- <figure> - defines images that annotate an article
+### New Inline Elements
+- <mark> - to indicate content that is marked in some fashion
+- <time> - to indicate content that is a time or date
+- <meter> - to indicate content that is a fraction of a known range - such as disk usage
+- <progress> - to indicate the progress of a task towards completion
+### New Input Types
+- <input type="datetime">
+- <input type="datetime-local">
+- <input type="date">
+- <input type="month">
+- <input type="week">
+- <input type="time">
+- <input type="number">
+- <input type="range">
+- <input type="email">
+- <input type="url">
+### New Elements
+- *canvas* - an element to give you a drawing space in JavaScript on your Web pages. It can let you add images or graphs to tool tips or just create dynamic graphs on your Web pages, built on the fly.
+- *video* - add video to your Web pages with this simple tag.
+- *audio* - add sound to your Web pages with this simple tag.
+### No More Types for Scripts and Links
+${"```"}
+<link rel="stylesheet" href="path/to/stylesheet.css" />
+<script src="path/to/script.js"></script>
+${"```"}
+### Make your content editable
+${"```"}
+<h2> To-Do List </h2>
+<ul contenteditable="true">
+  <li> Break mechanical cab driver. </li>
+  <li> Drive to abandoned factory
+  <li> Watch video of self </li>
+</ul>
+${"```"}
+### Input Attributes
+- require to mention the form field is required
+- autofocus puts the cursor on the input field
+`,
+        tags: ["html", "html5", "editable", "input"]
     }
 
 ];

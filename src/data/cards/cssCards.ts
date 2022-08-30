@@ -319,6 +319,13 @@ LESS syntax is the same as the SCSS with some exceptions. LESS uses @ to define 
         }
         ${"```"}`,
         tags: ["css", "calc"]
+    },
+    {
+        question: "How does CSS actually work (under the hood of browser)?",
+        answer: `When a browser displays a document, it must combine the document's content with its style information. It processes the document in two stages:  
+- The browser converts HTML and CSS into the DOM (*Document Object Model*). The DOM represents the document in the computer's memory. It combines the document's content with its style.  
+- The browser displays the contents of the DOM.`,
+        tags: ["css", "browser", "DOM"]
     }
 
 ];

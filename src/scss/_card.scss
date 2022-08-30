@@ -59,6 +59,11 @@
         & p {
             margin: 0;
         }
+
+        & pre {
+            background-color: $color-grey;
+            color: $color-green;
+        }
     }
 
     &__tags{
