@@ -11,13 +11,15 @@
         background-color: transparent;
         color: $color-white;
         padding: 2px 1rem;
-        border: 1px solid $color-white;
-        border-radius: 0.25rem;
+        border: none;
+        border-bottom: 1px solid;
         font-size: 1rem;
 
         &:focus, &:focus-visible {
             outline: none;
+            border-color: $color-green;
         }
+        
     }
 }
 
