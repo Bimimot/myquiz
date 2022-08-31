@@ -1,5 +1,6 @@
-import { FC, useState, useCallback, useMemo } from "react";
+import { FC, useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { useDispatch } from "../../store";
+
 import { addTag } from "../../store/reducerCards";
 import { TTag } from "../../types/";
 
@@ -27,8 +28,9 @@ export const InputTags: FC<TInputTags> = (props) => {
   );
 
   const [state, setState] = useState<TInputAutoTags>(initState);
+  const optionsRef = useRef<HTMLUListElement>(null);
   const dispatch = useDispatch();
-
+  
   const onChangeInput = useCallback(
     (event: { currentTarget: { value: string } }) => {
       const userInput = event.currentTarget.value.toLowerCase() || "";
@@ -53,6 +55,22 @@ export const InputTags: FC<TInputTags> = (props) => {
     setState({...initState, userInput: tag.text});
   }, []);
 
+  //missClick
+      useEffect(() => {
+        const clickDocument = (event: MouseEvent) => {
+          if (optionsRef.current && !optionsRef.current.contains(event.target as HTMLElement)) {
+            setState({ ...initState });
+          }
+        };
+
+        if (state.showOptions) {
+          document.addEventListener("click", clickDocument);
+        } else {
+          document.removeEventListener("click", clickDocument);
+        };
+        console.log(optionsRef);
+      }, [state.showOptions, initState]);
+
   const { filteredTags, showOptions, userInput } = state;
 
   return (
@@ -66,7 +84,7 @@ export const InputTags: FC<TInputTags> = (props) => {
           value={userInput}
         />
         {showOptions && (
-          <ul className="autocomplete">
+          <ul className="autocomplete" ref={optionsRef}>
             {filteredTags.map((tag, index) => (
               <li
                 className={`autocomplete__option autocomplete__option_color_${tag.color}`}

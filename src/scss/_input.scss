@@ -2,18 +2,18 @@
     display: flex;
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 10rem;
     margin: 1rem auto;
     z-index: 100;
 
     &__field {
-        flex-grow: 1;
         background-color: transparent;
         color: $color-white;
         padding: 2px 1rem;
         border: none;
         border-bottom: 1px solid;
         font-size: 1rem;
+        width: inherit;
 
         &:focus, &:focus-visible {
             outline: none;
