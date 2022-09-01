@@ -68,13 +68,12 @@ export const InputTags: FC<TInputTags> = (props) => {
         } else {
           document.removeEventListener("click", clickDocument);
         };
-        console.log(optionsRef);
       }, [state.showOptions, initState]);
 
   const { filteredTags, showOptions, userInput } = state;
 
   return (
-    <>
+    <>  
       <div className="input">
         <input
           className="input__field"
