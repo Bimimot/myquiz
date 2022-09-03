@@ -150,7 +150,7 @@ ${"```"}
         tags: ["js", "number", "converting", "string"]
     },
     {
-        question: "Why does comparing two similar objects in JavaScript return *false*?",
+        question: "Why does comparing two similar objects in JavaScript return false?",
         answer: "JavaScript compares objects and primitives differently. In primitives it compares them by value while in objects it compares them by reference or the address in memory where the variable is stored.",
         tags: ["js", "object", "comparing"]
     },
@@ -177,12 +177,12 @@ ${"```"}
     {
         question: "What are Higher Order Functions? ",
         answer: `Higher-Order Function are functions that can return a function or receive argument or arguments which have a value of a function.  
-        ${"```"}
+${"```"}  
         function higherOrderFunction(param,callback){
             return callback(param);
         }
 
-        ${"```"}`,
+${"```"}`,
         tags: ["js", "HOF", "high order function"]
     },
     {
@@ -294,8 +294,8 @@ A good analogy for a callback is when you call someone and if they don't answer 
     {
         question: "What is async/await and How does it work?",
         answer: `async/await is the new way of writing asynchronous or non-blocking code in JavaScript's.
-        It is built on top of Promises.
-        Using Promises.
+        It is built on top of Promises.  
+        #####Using Promises.  
         ${"```"}
             return fetch("url/to/api/endpoint")
                 .then(resp => resp.json())
@@ -307,7 +307,7 @@ A good analogy for a callback is when you call someone and if they don't answer 
                 });
         ${"```"}
           
-        Using async/await.
+        ####Using async/await.
         ${"```"}
         async function callApi() {
             try {
@@ -365,14 +365,15 @@ A good analogy for a callback is when you call someone and if they don't answer 
     },
     {
         question: "What is Object Destructuring?",
-        answer: `Object Destructuring is a clean way of getting or extracting values from an object or an array.    
-        let { firstName, lastName, position, yearHired } = employee;
+        answer: `
+        ###     Object Destructuring is a clean way of getting or extracting values from an object or an array.    
+- let { firstName, lastName, position, yearHired } = employee;
           
-        If we want to change the variable name we want to extract we use the *propertyName:newName* syntax.
-        let { firstName: fName, lastName: lName, position } = employee;
+        ### If we want to change the variable name we want to extract we use the *propertyName:newName* syntax.
+- let { firstName: fName, lastName: lName, position } = employee;
           
-        We can also have default values when destructuring.
-        let { firstName = "Mark", lastName: lName, position, yearHired } = employee;`,
+        ### We can also have default values when destructuring.
+- let { firstName = "Mark", lastName: lName, position, yearHired } = employee;`,
         tags: ["js", "object", "destructuring"]
     }
 

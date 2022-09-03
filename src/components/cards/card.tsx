@@ -20,7 +20,7 @@ export const Card = memo(
       <div className="card">
         <div className={blockStyle}>
           <div className="card__intro">
-            <h3 className="card__title" onClick={() => setIsOpen(!isOpen)}>
+            <h3 className="card__title" onClick={() => setIsOpen(!isOpen)}> 
               {question}
             </h3>
             <Button newClick={() => setIsOpen(!isOpen)}>
