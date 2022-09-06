@@ -62,20 +62,6 @@ Typeof alert(a) === “function”`,
         tags: ["js", "types", "primitives"]
     },
     {
-        question: "How could you check null and undefined in TypeScript?",
-        answer: `Just:  
-        ***if (value) {...}***  
-        It will evaluate to true if value is not:  
--null,  
--undefined  
--NaN  
--empty string  
--0  
--false
-`,
-        tags: ["ts", "types", "null", "undefined"]
-    },
-    {
         question: "JS specification doesn't have setTimeout() method. Why this method works?",
         answer: `This method belongs to WEB api (browser api)`,
         tags: ["js", "web api"]
