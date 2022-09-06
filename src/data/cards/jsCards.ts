@@ -68,11 +68,12 @@ Typeof alert(a) === “function”`,
     },
     {
         question: "How to check null?",
-        answer: `The typeof ***null*** is **object**, so  
-        we should use We can use strict equality operator to check if a value is null.
-        ${"```"}
-        if (value === null) { ... }
-        ${"```"}
+        answer: `The typeof ***null*** is **object**, so we should use use strict equality operator to check if a value is null.  
+${"```"}
+
+if (value === null) { ... }
+
+${"```"}
         `,
         tags: ["js", "types", "null"]
     },
@@ -222,7 +223,7 @@ This saves time but has a downside that we will consume more memory for saving t
 - Promises,
 - async/await,
 - or special libraries`,
-        tags: ["js", "asynchronous"]
+        tags: ["js", "asynchronous", "async/await", "promise", "callback"]
     },
     {
         question: "What is a Callback function?",
@@ -278,11 +279,10 @@ A good analogy for a callback is when you call someone and if they don't answer 
         tags: ["js", "isArray"]
     },
     {
-        question: "What is async/await and How does it work?",
-        answer: `async/await is the new way of writing asynchronous or non-blocking code in JavaScript's.
+        question: "What is async/await and how does it work?",
+        answer: `Async and await is the new way of writing asynchronous or non-blocking code in JavaScript's.
         It is built on top of Promises.  
-        #####Using Promises.  
-        ${"```"}
+#### Using Promises.  
             return fetch("url/to/api/endpoint")
                 .then(resp => resp.json())
                 .then(data => {
@@ -291,10 +291,8 @@ A good analogy for a callback is when you call someone and if they don't answer 
                 .catch(err => {
                     //do something with "err"
                 });
-        ${"```"}
           
-        ####Using async/await.
-        ${"```"}
+#### Using async/await.
         async function callApi() {
             try {
                 const resp = await fetch("url/to/api/endpoint");
@@ -304,9 +302,8 @@ A good analogy for a callback is when you call someone and if they don't answer 
                 //do something with "err"
             }
             }
-        ${"```"}
         `,
-        tags: ["js"]
+        tags: ["js", "async/await", "promise"]
     },
     {
         question: "What is the Set object and how does it work?",
