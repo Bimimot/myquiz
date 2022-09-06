@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "@types/lodash.isequal": "^4.5.6",
-    "@types/redux-logger": "^3.0.9"
+    "@types/redux-logger": "^3.0.9",
+    "jest": "^27.5.1"
   }
 }

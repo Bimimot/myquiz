@@ -11,7 +11,7 @@ export const App = () => {
 
   const clickBtn = useCallback((btn: TBtn) => {
     dispatch(clearCards());
-    setTimeout(() => dispatch(getRandom({ btn })), 0); //for animation
+    setTimeout(() => dispatch(getRandom(btn.theme)), 0); //for animation
   }, []);
 
   return (
