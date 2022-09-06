@@ -51,7 +51,7 @@ export const InputTags: FC<TInputTags> = (props) => {
   );
 
   const clickOption = useCallback((tag: TTag) => {
-    dispatch(addTag({ tag }));
+    dispatch(addTag(tag));
     setState({...initState, userInput: tag.text});
   }, []);
 

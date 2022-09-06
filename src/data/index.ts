@@ -7,7 +7,7 @@ import { tsCards } from "./cards/tsCards";
 import colors from "../../src/scss/btnColors.scss";
 import { TBtn, TTag, TCard, TCardProps, TCards } from "../types";
 
-const arrColors: string[] = colors.btnColors.replace(/\s/g, '').split(',');
+const arrColors: string[] = (colors.btnColors || "white").replace(/\s/g, '').split(',');
 
 const rawCards: TCards = {
     html: htmlCards,

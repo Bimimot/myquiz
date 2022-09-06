@@ -28,14 +28,14 @@ const cardsSlice = createSlice({
             state.cards = !!arr.length ? [arr[index]] : [];
             state.tag = null
         },
-        addTag: (state: TStateCards, action: PayloadAction<{ tag: TTag }>) => {
+        addTag: (state: TStateCards, action: PayloadAction<TTag>) => {
             const tagedCards: TCardProps[] = [];
 
             for (let themeCards of Object.values(state.raw)) {
-                tagedCards.push(...themeCards.filter(({ tags }) => tags.includes(action.payload.tag.text)));
+                tagedCards.push(...themeCards.filter(({ tags }) => tags.includes(action.payload.text)));
             };
 
-            state.tag = action.payload.tag;
+            state.tag = action.payload;
             state.cards = tagedCards;
         },
         clearCards: (state: TStateCards) => {
