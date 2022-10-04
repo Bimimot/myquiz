@@ -309,14 +309,14 @@ A good analogy for a callback is when you call someone and if they don't answer 
         question: "What is the Set object and how does it work?",
         answer: `The Set object is an ES6 feature that lets you store unique values, primitives or object references.  
         A value in a Set can only occur once.
-        We can make Set instance using Set constructor and we can optionally pass an Iterable as the initial value.
-        ${"```"}
+        We can make Set instance using Set constructor and we can optionally pass an Iterable as the initial value.  
+${"```"}
             const set1 = new Set();
             const set2 = new Set(["a","b","c","d","d","e"]);
-        ${"```"}
+${"```"}  
         We can add a new value into the Set instance using the add method and since the add returns the Set object we can chain add calls.  
         If a value already exists in Set object it will not be added again.
-        ${"```"}
+${"```"}  
             set2.add("f");
             set2.add("g").add("h").add("i").add("j").add("k").add("k");
             // the last "k" will not be added
@@ -349,13 +349,13 @@ A good analogy for a callback is when you call someone and if they don't answer 
     {
         question: "What is Object Destructuring?",
         answer: `
-        ###     Object Destructuring is a clean way of getting or extracting values from an object or an array.    
-- let { firstName, lastName, position, yearHired } = employee;
+#### Object Destructuring is a clean way of getting or extracting values from an object or an array.    
+- let { firstName, lastName, position, yearHired } = employee;  
           
-        ### If we want to change the variable name we want to extract we use the *propertyName:newName* syntax.
-- let { firstName: fName, lastName: lName, position } = employee;
+#### If we want to change the variable name we want to extract we use the *propertyName:newName* syntax.
+- let { firstName: fName, lastName: lName, position } = employee;  
           
-        ### We can also have default values when destructuring.
+#### We can also have default values when destructuring.
 - let { firstName = "Mark", lastName: lName, position, yearHired } = employee;`,
         tags: ["js", "object", "destructuring"]
     }
