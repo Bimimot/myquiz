@@ -310,6 +310,22 @@ A Manifest file contains three Sections as
 - NETWORK — Files listed here, always need a connection to the server. The browser can never cache them.  
 - FALLBACK — Files listed here specify the fallback pages, if any page in it is not accessible.`,
         tags: ["html", "appcache", "manifest"]
+    },
+    {
+        question: "Describe the page rendering process in a browser?",
+        answer: `
+1. The rendering engine starts getting the contents of the requested document from the networking layer. This will usually be done in 8kB chunks.
+2. A DOM tree is built out of the broken response.
+3. New requests are made to the server for each new resource that is found in the HTML source (typically images, style sheets, and JavaScript files).
+4. At this stage the browser marks the document as interactive and starts parsing scripts that are in "deferred" mode: those that should be executed after the document is parsed. The document state is set to "complete" and a "load" event is fired.
+5. Each CSS file is parsed into a StyleSheet object, where each object contains CSS rules with selectors and objects corresponding CSS grammar. The tree built is called CSSCOM.
+6. On top of DOM and CSSOM, a rendering tree is created, which is a set of objects to be rendered. Each of the rendering objects contains its corresponding DOM object (or a text block) plus the calculated styles. In other words, the render tree describes the visual representation of a DOM.
+7. After the construction of the render tree it goes through a "layout" process. This means giving each node the exact coordinates where it should appear on the screen.
+8. The next stage is painting–the render tree will be traversed and each node will be painted using the UI backend layer.
+8. Repaint: When changing element styles which don't affect the element's position on a page (such as background-color, border-color, visibility), the browser just repaints the element again with the new styles applied (that means a "repaint" or "restyle" is happening).
+10/ Reflow: When the changes affect document contents or structure, or element position, a reflow (or relayout) happens. 
+        `,
+        tags: ["html", "rendering", "parsing", "browser"]
     }
 
 ];
