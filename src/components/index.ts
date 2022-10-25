@@ -3,7 +3,6 @@ import { ThemeButtons } from "./buttons/theme-buttons";
 import { Cards } from "./cards/cards";
 import { InputTags } from "./tags/input-tags";
 import {
-    IconClose,
     IconSearch,
     IconPlus,
     IconMinus
@@ -14,7 +13,6 @@ export {
     ThemeButtons,
     Cards,
     InputTags,
-    IconClose,
     IconSearch,
     IconPlus,
     IconMinus

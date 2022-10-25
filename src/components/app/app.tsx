@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { TBtn} from "../../types";
+import { TBtn } from "../../types";
 import { ThemeButtons, Cards, InputTags } from "../";
 import { collectedData } from "../../data";
 import { useDispatch } from "../../store";

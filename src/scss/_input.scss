@@ -17,7 +17,6 @@
 
         &:focus, &:focus-visible {
             outline: none;
-            border-color: $color-green;
         }
         
     }
@@ -47,7 +46,7 @@
 
         @each $color in $btnColors {
             &_color_#{$color}{
-                color: $color;
+                color: $color; 
             }
         }
 
@@ -56,7 +55,7 @@
             color: $color-white;
         }
         &:not(:last-of-type) {
-            border-bottom: 1px solid;
+            border-bottom: 1px solid $color-white;
         }
 
         &_type_active {
