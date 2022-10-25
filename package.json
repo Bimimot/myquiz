@@ -1,5 +1,9 @@
 {
-  "name": "quiz",
+  "name": "frontend-quiz",
+  "repository": "https://github.com/Bimimot/myquiz",
+  "homepage": "https://bimimot.github.io/myquiz/",
+  "author": "Bimimot <bimimot@gmail.com> (https://github.com/Bimimot)",
+  "license": "ISC",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
