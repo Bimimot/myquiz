@@ -17,7 +17,7 @@ export const App = () => {
   return (
     <div className="app">
       <div className="row-items">
-        <h1 className="app__title">MY QUIZ</h1>
+        <h1 className="app__title">FRONTEND QUIZ</h1>
       </div>
       <ThemeButtons btns={btns} callbackBtn={clickBtn} />
       <InputTags tags={tags} />
