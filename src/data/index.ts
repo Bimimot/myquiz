@@ -1,8 +1,6 @@
 import { cssCards } from "./cards/cssCards";
 import { htmlCards } from "./cards/htmlCards";
 import { jsCards } from "./cards/jsCards";
-import { reactCards } from "./cards/reactCards";
-import { tsCards } from "./cards/tsCards";
 
 import colors from "../../src/scss/btnColors.scss";
 import { TBtn, TTag, TCard, TCardProps, TCards } from "../types";
@@ -12,9 +10,7 @@ const arrColors: string[] = (colors.btnColors || "white").replace(/\s/g, '').spl
 const rawCards: TCards = {
     html: htmlCards,
     css: cssCards,
-    js: jsCards,
-    ts: tsCards,
-    react: reactCards
+    js: jsCards
 };
 
 export const collectedData = function collectData(): {
