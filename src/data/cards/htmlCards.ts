@@ -329,5 +329,3 @@ A Manifest file contains three Sections as
     }
 
 ];
-
-//appcache
